@@ -1,0 +1,115 @@
+syntax = "proto2";
+
+
+message Feed{
+	required string statusCode = 1;
+	required string id = 2;
+	required string statusCode2= 3;
+	required string hasMore = 4;
+	repeated Itemlist itemList = 5;
+}
+
+
+message Itemlist{
+	required string id = 1;
+	required string desc = 2;
+	required uint32 createTime = 3;
+	required Author author = 4;
+	required Music music = 5;
+	repeated Challenges challenges = 6;
+	required Video video = 7;
+	repeated TextExtra textextra = 14;
+	message TextExtra{
+        required string awemeId = 6;
+        required string hashtagName = 5;
+	}
+	message Author{
+		optional string id = 1;
+		optional string duetSetting = 2;
+		optional string nickname = 3;
+		optional string sth = 4;
+		optional string signature = 5;
+		optional string sth2 = 6;
+		optional Avatar avatarLarger = 7;
+		optional Avatar avatarMedium = 8;
+		optional Avatar avatarThumb = 9;
+		optional string sth3 = 10;
+		optional string sth4 = 11;
+		optional string relation = 12;
+		message Avatar {
+		    optional string id = 1;
+		    repeated string url = 2;
+		    optional string x = 3;
+		    optional string y = 4;
+		}
+
+	}
+	message Authorstats{
+
+	}
+	message Duetinfo{
+
+	}
+	message Music{
+        required string id = 2;
+        required string title = 3;
+        required string album = 6;
+        required string coverLarge = 7;
+        required string coverMedium = 8;
+        required string coverThumb = 9;
+        required uint32 duration = 12;
+        required string playUrl = 10;
+        message Urls {
+        	required string url1 = 1;
+        	required string url2 = 2;
+        }
+	}
+	message Video{
+        repeated Playaddr playAddr = 1;
+        repeated Playaddr downloadAddr = 8;
+        repeated Zoomcover zoomCover = 2;
+        optional string width = 4;
+        optional string height = 3;      
+        required uint32 duration = 13;      
+        optional Subtitles subtitles = 31;
+	}
+	message Challenges{
+        required string id = 1;
+        required string title = 2;
+        required string desc = 4;
+        required bool isCommerce = 6;
+	}
+
+    message Playaddr {
+        required string FileHash = 7;
+        required string Uri = 1;
+        required string UrlKey = 5;
+        repeated string UrlList = 2;
+        optional string width = 3;
+        optional string height = 4;
+    }
+
+    message Zoomcover {
+        required string FileHash = 7;
+        required string Uri = 1;
+        required string UrlKey = 5;
+        repeated string UrlList = 2;
+        optional string width = 3;
+        optional string height = 4;
+    }
+
+    message Subtitles{
+    	required uint32 exists = 1;
+    	repeated Subaddr subtitle = 4;
+    }
+    message Subaddr {
+    	required string languageCode = 1;
+    	optional string Url = 3;
+    	optional uint32 timestamp = 4;
+    	optional string format = 5;
+    }
+
+}
+
+
+
