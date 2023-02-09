@@ -1,0 +1,23 @@
+{
+    "pre_item_playtime": Number, // Milliseconds the previous video was watched before swiping to the next (this) one
+    "user_algo_refresh_status": Boolean,
+    "first_install_time": Number, // timestamp of the first install of the app
+    "enter_from": "homepage_hot", 
+    "item_id": Number, // unique id of the current video
+    "is_ad": Number, // 0 = not an add, 1 = this is an add
+    "follow_status": Number, // 0, 1
+    "session_id": "1675848389947",
+    "sync_origin": Boolean,
+    "follower_status":Number, // 0, 1
+    "impr_order": Number,
+    "last_impr_order": Number,
+    "action_time": Number, // timestamp
+    "tab_type": Number, // 0, 1
+    "item_source_category": Number, //observed 1,3 (not always present)
+    "item_distribute_source": String, // observed: "for_you_page" 
+    "play_delta": Number, //always 1 in the data we observed
+    "request_id": String,
+    "aweme_type": Number, //mostly 0, but also 51,55,58
+    "order": Number,
+    "pre_item_id": Number //unique ID of the previous item
+  }
