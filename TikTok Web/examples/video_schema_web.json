@@ -1,0 +1,945 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties":
+    {
+        "video":
+        {
+            "type": "object",
+            "properties":
+            {
+                "id":
+                {
+                    "type": "string"
+                },
+                "height":
+                {
+                    "type": "integer"
+                },
+                "width":
+                {
+                    "type": "integer"
+                },
+                "duration":
+                {
+                    "type": "integer"
+                },
+                "ratio":
+                {
+                    "type": "string"
+                },
+                "cover":
+                {
+                    "type": "string"
+                },
+                "originCover":
+                {
+                    "type": "string"
+                },
+                "dynamicCover":
+                {
+                    "type": "string"
+                },
+                "playAddr":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "type":
+                        [
+                            "null",
+                            "string"
+                        ]
+                    }
+                },
+                "downloadAddr":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "type":
+                        [
+                            "null",
+                            "string"
+                        ]
+                    }
+                },
+                "shareCover":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "type": "string"
+                    }
+                },
+                "reflowCover":
+                {
+                    "type": "string"
+                },
+                "bitrate":
+                {
+                    "type": "integer"
+                },
+                "encodedType":
+                {
+                    "type": "string"
+                },
+                "format":
+                {
+                    "type": "string"
+                },
+                "videoQuality":
+                {
+                    "type": "string"
+                },
+                "encodeUserTag":
+                {
+                    "type": "string"
+                },
+                "codecType":
+                {
+                    "type": "string"
+                },
+                "definition":
+                {
+                    "type": "string"
+                },
+                "subtitleInfos":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "type": "object",
+                        "properties":
+                        {
+                            "Format":
+                            {
+                                "type": "string"
+                            },
+                            "LanguageCodeName":
+                            {
+                                "type": "string"
+                            },
+                            "LanguageID":
+                            {
+                                "type": "string"
+                            },
+                            "Size":
+                            {
+                                "type":
+                                [
+                                    "integer",
+                                    "string"
+                                ]
+                            },
+                            "Source":
+                            {
+                                "type": "string"
+                            },
+                            "Url":
+                            {
+                                "type": "string"
+                            },
+                            "UrlExpire":
+                            {
+                                "type":
+                                [
+                                    "integer",
+                                    "string"
+                                ]
+                            },
+                            "Version":
+                            {
+                                "type": "string"
+                            },
+                            "VideoSubtitleID":
+                            {
+                                "type": "integer"
+                            }
+                        },
+                        "required":
+                        [
+                            "Format",
+                            "LanguageCodeName",
+                            "LanguageID",
+                            "Size",
+                            "Source",
+                            "Url",
+                            "UrlExpire",
+                            "Version",
+                            "VideoSubtitleID"
+                        ]
+                    }
+                },
+                "subtitles":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "type": "object",
+                        "properties":
+                        {
+                            "lang":
+                            {
+                                "type": "string"
+                            }
+                        },
+                        "required":
+                        [
+                            "lang"
+                        ]
+                    }
+                }
+            },
+            "required":
+            [
+                "cover",
+                "downloadAddr",
+                "duration",
+                "dynamicCover",
+                "height",
+                "id",
+                "originCover",
+                "playAddr",
+                "ratio",
+                "reflowCover",
+                "shareCover",
+                "subtitleInfos",
+                "width"
+            ]
+        },
+        "adAuthorization":
+        {
+            "type": "boolean"
+        },
+        "adLabelVersion":
+        {
+            "type": "integer"
+        },
+        "author":
+        {
+            "type": "object",
+            "properties":
+            {
+                "uniqueId":
+                {
+                    "type": "string"
+                },
+                "nickname":
+                {
+                    "type": "string"
+                },
+                "avatarThumb":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "type": "string"
+                    }
+                },
+                "avatarMedium":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "type": "string"
+                    }
+                },
+                "avatarLarger":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "type": "string"
+                    }
+                },
+                "signature":
+                {
+                    "type": "string"
+                },
+                "verified":
+                {
+                    "type": "boolean"
+                },
+                "secUid":
+                {
+                    "type": "string"
+                },
+                "secret":
+                {
+                    "type": "boolean"
+                },
+                "ftc":
+                {
+                    "type": "boolean"
+                },
+                "relation":
+                {
+                    "type": "integer"
+                },
+                "openFavorite":
+                {
+                    "type": "boolean"
+                },
+                "commentSetting":
+                {
+                    "type": "integer"
+                },
+                "duetSetting":
+                {
+                    "type": "integer"
+                },
+                "stitchSetting":
+                {
+                    "type": "integer"
+                },
+                "privateAccount":
+                {
+                    "type": "boolean"
+                },
+                "isADVirtual":
+                {
+                    "type": "boolean"
+                },
+                "ttSeller":
+                {
+                    "type": "boolean"
+                }
+            },
+            "required":
+            [
+                "avatarLarger",
+                "avatarMedium",
+                "avatarThumb"
+            ]
+        },
+        "authorStats":
+        {
+            "type": "object",
+            "properties":
+            {
+                "followerCount":
+                {
+                    "type": "integer"
+                },
+                "followingCount":
+                {
+                    "type": "integer"
+                },
+                "heart":
+                {
+                    "type": "number"
+                },
+                "heartCount":
+                {
+                    "type": "integer"
+                },
+                "videoCount":
+                {
+                    "type": "integer"
+                },
+                "diggCount":
+                {
+                    "type": "integer"
+                }
+            },
+            "required":
+            [
+                "diggCount",
+                "followerCount",
+                "followingCount",
+                "heart",
+                "heartCount",
+                "videoCount"
+            ]
+        },
+        "challenges":
+        {
+            "type": "array",
+            "items":
+            {
+                "type": "object",
+                "properties":
+                {
+                    "id":
+                    {
+                        "type": "string"
+                    },
+                    "title":
+                    {
+                        "type": "string"
+                    },
+                    "desc":
+                    {
+                        "type": "string"
+                    },
+                    "profileLarger":
+                    {
+                        "type": "string"
+                    },
+                    "profileMedium":
+                    {
+                        "type": "string"
+                    },
+                    "profileThumb":
+                    {
+                        "type": "string"
+                    },
+                    "coverLarger":
+                    {
+                        "type": "string"
+                    },
+                    "coverMedium":
+                    {
+                        "type": "string"
+                    },
+                    "coverThumb":
+                    {
+                        "type": "string"
+                    },
+                    "isCommerce":
+                    {
+                        "type": "boolean"
+                    },
+                    "stats":
+                    {
+                        "type": "array",
+                        "items":
+                        {
+                            "type": "object",
+                            "properties":
+                            {
+                                "videoCount":
+                                {
+                                    "type": "integer"
+                                },
+                                "viewCount":
+                                {
+                                    "type": "integer"
+                                }
+                            },
+                            "required":
+                            [
+                                "videoCount",
+                                "viewCount"
+                            ]
+                        }
+                    },
+                    "_id":
+                    {
+                        "type": "object",
+                        "properties":
+                        {
+                            "$oid":
+                            {
+                                "type": "string"
+                            }
+                        },
+                        "required":
+                        [
+                            "$oid"
+                        ]
+                    }
+                },
+                "required":
+                [
+                    "_id",
+                    "coverLarger",
+                    "coverMedium",
+                    "coverThumb",
+                    "desc",
+                    "id",
+                    "isCommerce",
+                    "profileLarger",
+                    "profileMedium",
+                    "profileThumb",
+                    "stats",
+                    "title"
+                ]
+            }
+        },
+        "comments":
+        {
+            "type": "array"
+        },
+        "createTime":
+        {
+            "type": "string"
+        },
+        "createTimestamp":
+        {
+            "type": "integer"
+        },
+        "desc":
+        {
+            "type": "string"
+        },
+        "digged":
+        {
+            "type": "boolean"
+        },
+        "diversificationLabels":
+        {
+            "type": "array",
+            "items":
+            {
+                "type": "string"
+            }
+        },
+        "duetDisplay":
+        {
+            "type": "integer"
+        },
+        "duetEnabled":
+        {
+            "type": "boolean"
+        },
+        "duetInfo":
+        {
+            "type": "object",
+            "properties":
+            {
+                "duetFromId":
+                {
+                    "type": "string"
+                }
+            },
+            "required":
+            [
+                "duetFromId"
+            ]
+        },
+        "effectStickers":
+        {
+            "type": "array",
+            "items":
+            {
+                "type": "object",
+                "properties":
+                {
+                    "ID":
+                    {
+                        "type": "string"
+                    },
+                    "name":
+                    {
+                        "type": "string"
+                    },
+                    "stickerStats":
+                    {
+                        "type": "object",
+                        "properties":
+                        {
+                            "useCount":
+                            {
+                                "type": "integer"
+                            }
+                        },
+                        "required":
+                        [
+                            "useCount"
+                        ]
+                    }
+                },
+                "required":
+                [
+                    "ID",
+                    "name"
+                ]
+            }
+        },
+        "forFriend":
+        {
+            "type": "boolean"
+        },
+        "id":
+        {
+            "type": "string"
+        },
+        "isAd":
+        {
+            "type": "boolean"
+        },
+        "itemCommentStatus":
+        {
+            "type": "integer"
+        },
+        "itemMute":
+        {
+            "type": "boolean"
+        },
+        "music":
+        {
+            "type": "object",
+            "properties":
+            {
+                "id":
+                {
+                    "type": "string"
+                },
+                "title":
+                {
+                    "type": "string"
+                },
+                "playUrl":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "type": "string"
+                    }
+                },
+                "coverLarge":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "type": "string"
+                    }
+                },
+                "coverMedium":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "type": "string"
+                    }
+                },
+                "coverThumb":
+                {
+                    "type": "array",
+                    "items":
+                    {
+                        "type": "string"
+                    }
+                },
+                "authorName":
+                {
+                    "type": "string"
+                },
+                "original":
+                {
+                    "type": "boolean"
+                },
+                "duration":
+                {
+                    "type": "integer"
+                },
+                "album":
+                {
+                    "type": "string"
+                },
+                "scheduleSearchTime":
+                {
+                    "type": "integer"
+                }
+            },
+            "required":
+            [
+                "coverLarge",
+                "coverMedium",
+                "coverThumb",
+                "id",
+                "original",
+                "playUrl",
+                "title"
+            ]
+        },
+        "officalItem":
+        {
+            "type": "boolean"
+        },
+        "originalItem":
+        {
+            "type": "boolean"
+        },
+        "privateItem":
+        {
+            "type": "boolean"
+        },
+        "profiles":
+        {
+            "type": "array",
+            "items":
+            {
+                "type": "string"
+            }
+        },
+        "secret":
+        {
+            "type": "boolean"
+        },
+        "sessions":
+        {
+            "type": "array",
+            "items":
+            {
+                "type": "string"
+            }
+        },
+        "shareEnabled":
+        {
+            "type": "boolean"
+        },
+        "showNotPass":
+        {
+            "type": "boolean"
+        },
+        "stats":
+        {
+            "type": "object",
+            "properties":
+            {
+                "diggCount":
+                {
+                    "type": "integer"
+                },
+                "shareCount":
+                {
+                    "type": "integer"
+                },
+                "commentCount":
+                {
+                    "type": "integer"
+                },
+                "playCount":
+                {
+                    "type": "integer"
+                }
+            },
+            "required":
+            [
+                "commentCount",
+                "diggCount",
+                "playCount",
+                "shareCount"
+            ]
+        },
+        "stickersOnItem":
+        {
+            "type": "array",
+            "items":
+            {
+                "type": "object",
+                "properties":
+                {
+                    "stickerText":
+                    {
+                        "type": "array",
+                        "items":
+                        {
+                            "type": "string"
+                        }
+                    },
+                    "stickerType":
+                    {
+                        "type": "integer"
+                    }
+                },
+                "required":
+                [
+                    "stickerText",
+                    "stickerType"
+                ]
+            }
+        },
+        "stitchDisplay":
+        {
+            "type": "integer"
+        },
+        "stitchEnabled":
+        {
+            "type": "boolean"
+        },
+        "textExtra":
+        {
+            "type": "array",
+            "items":
+            {
+                "type": "object",
+                "properties":
+                {
+                    "awemeId":
+                    {
+                        "type": "string"
+                    },
+                    "start":
+                    {
+                        "type": "integer"
+                    },
+                    "end":
+                    {
+                        "type": "integer"
+                    },
+                    "hashtagId":
+                    {
+                        "type": "string"
+                    },
+                    "hashtagName":
+                    {
+                        "type": "string"
+                    },
+                    "type":
+                    {
+                        "type": "integer"
+                    },
+                    "subType":
+                    {
+                        "type": "integer"
+                    },
+                    "userId":
+                    {
+                        "type": "string"
+                    },
+                    "isCommerce":
+                    {
+                        "type": "boolean"
+                    },
+                    "userUniqueId":
+                    {
+                        "type": "string"
+                    },
+                    "secUid":
+                    {
+                        "type": "string"
+                    },
+                    "_id":
+                    {
+                        "type": "object",
+                        "properties":
+                        {
+                            "$oid":
+                            {
+                                "type": "string"
+                            }
+                        },
+                        "required":
+                        [
+                            "$oid"
+                        ]
+                    }
+                },
+                "required":
+                [
+                    "_id",
+                    "awemeId",
+                    "end",
+                    "hashtagId",
+                    "hashtagName",
+                    "isCommerce",
+                    "secUid",
+                    "start",
+                    "subType",
+                    "type",
+                    "userId",
+                    "userUniqueId"
+                ]
+            }
+        },
+        "warnInfo":
+        {
+            "type": "array",
+            "items":
+            {
+                "type": "object",
+                "properties":
+                {
+                    "key":
+                    {
+                        "type": "string"
+                    },
+                    "lang":
+                    {
+                        "type": "string"
+                    },
+                    "text":
+                    {
+                        "type": "string"
+                    },
+                    "type":
+                    {
+                        "type": "integer"
+                    },
+                    "url":
+                    {
+                        "type": "string"
+                    }
+                },
+                "required":
+                [
+                    "key",
+                    "lang",
+                    "text",
+                    "type",
+                    "url"
+                ]
+            }
+        },
+        "authorId":
+        {
+            "type": "string"
+        },
+        "authorSecId":
+        {
+            "type": "string"
+        },
+        "avatarThumb":
+        {
+            "type": "string"
+        },
+        "indexEnabled":
+        {
+            "type": "boolean"
+        },
+        "nickname":
+        {
+            "type": "string"
+        },
+        "scheduleTime":
+        {
+            "type": "integer"
+        },
+        "takeDown":
+        {
+            "type": "integer"
+        }
+    },
+    "required":
+    [
+        "adAuthorization",
+        "adLabelVersion",
+        "author",
+        "authorStats",
+        "challenges",
+        "comments",
+        "createTime",
+        "desc",
+        "digged",
+        "diversificationLabels",
+        "duetDisplay",
+        "duetEnabled",
+        "duetInfo",
+        "effectStickers",
+        "forFriend",
+        "id",
+        "isAd",
+        "itemCommentStatus",
+        "itemMute",
+        "music",
+        "officalItem",
+        "originalItem",
+        "privateItem",
+        "profiles",
+        "secret",
+        "sessions",
+        "shareEnabled",
+        "showNotPass",
+        "stats",
+        "stickersOnItem",
+        "stitchDisplay",
+        "stitchEnabled",
+        "textExtra",
+        "video",
+        "warnInfo"
+    ]
+}
