@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>TikTok Hashtags Over Time</title>
+
+<script src="js/d3.v7.min.js"></script>
+<script src="js/d3-color@3.js"></script>
+<script src="js/d3-dispatch@3.js"></script>
+<script src="js/d3-ease@3.js"></script>
+<script src="js/d3-interpolate@3.js"></script>
+<script src="js/d3-selection@3.js"></script>
+<script src="js/d3-timer@3.js"></script>
+<script src="js/d3-transition@3.js"></script>
+<script src="js/d3-drag@3.js"></script>
+<script src="js/d3-zoom@3.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/fyp2022.css">
+<body>
+<div class="svg-container"></div>
+
+
+    
+<nav class="navbar navbar-expand-sm bg-body-tertiary">
+  <div class="container-fluid">
+    <img src="SNV_Logo.png" width="50" />TikTok FYP Hashtag Use</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <div class="date" id="date">
+            Date (Start: June '22)
+          </div>
+          <div class="slidecontainer">
+            <input type="range" min="0" max="6" value="0" class="slider" id="slider">
+          </div>
+        </li>
+        <li class="nav-item">
+          <button a class="btn btn-warning" type="button" id="Reset" value="Reset Zoom">Reset</button>
+
+        </li>
+    <li class="nav-item">
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDetails" aria-controls="offcanvasExample">
+        Details
+      </button>
+
+    
+    </li>
+  </div>
+</div>
+</nav>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasDetails" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasDetailsLabel">Details</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+      <p>
+        Showing the top 200 hashtags per 7 days. 
+        Hashtags added are hightlighted green. Click a circle to mark.
+        
+      </p>
+      <p>Learn more about this project at <a href="https://www.stiftung-nv.de/en/publication/tiktok-algorithms-how-platforms-hashtags-evolve-over-time">here</a></p>  
+      <div id="explanation">Data by time interval</div>
+      
+      <p>
+        <a class="btn btn-warning" data-bs-toggle="collapse" href="#collapseAll" role="button" aria-expanded="true" aria-controls="collapseAll">
+          All
+        </a>
+        <a class="btn btn-warning" data-bs-toggle="collapse" href="#collapseAdded" role="button" aria-expanded="false" aria-controls="collapseAdded">
+          Added
+        </a>
+        <a class="btn btn-warning" data-bs-toggle="collapse" href="#collapseRemoved" role="button" aria-expanded="false" aria-controls="collapseRemoved">
+          Removed
+        </a>
+      </p>
+      <div class="collapse show multicollapse" id="collapseAll">
+        <div class="card card-body">
+          <p>All</p>
+          <ul id="hashtag-list-all" class="text-start hashtag-list">
+  
+          </ul>
+        </div>
+      </div>
+      <div class="collapse multicollapse" id="collapseAdded">
+        <div class="card card-body">
+          <p>Added</p>
+          <ul id="hashtag-list-added" class="text-start hashtag-list">
+  
+          </ul>
+        </div>
+      </div>
+      <div class="collapse multicollapse" id="collapseRemoved">
+        <div class="card card-body">
+          <p>Removed</p>
+          <ul id="hashtag-list-removed" class="text-start hashtag-list">
+  
+          </ul>
+        </div>
+      </div>.
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script type="module">
+// based on https://observablehq.com/@d3/modifying-a-force-directed-graph@109
+var colormark = "#f8b739"
+var colornew = "#70b700"
+var datasets = [[1653861600, 1654466400, 'KW 22-2022', '2022-05-30'], [1654466400, 1655071200, 'KW 23-2022', '2022-06-06'], [1655071200, 1655676000, 'KW 24-2022', '2022-06-13'], [1655676000, 1656280800, 'KW 25-2022', '2022-06-20'], [1656280800, 1656885600, 'KW 26-2022', '2022-06-27'], [1656885600, 1657490400, 'KW 27-2022', '2022-07-04'], [1657490400, 1658095200, 'KW 28-2022', '2022-07-11'], [1658095200, 1658700000, 'KW 29-2022', '2022-07-18'], [1658700000, 1659304800, 'KW 30-2022', '2022-07-25'], [1659304800, 1659909600, 'KW 31-2022', '2022-08-01'], [1659909600, 1660514400, 'KW 32-2022', '2022-08-08'], [1660514400, 1661119200, 'KW 33-2022', '2022-08-15'], [1661119200, 1661724000, 'KW 34-2022', '2022-08-22'], [1661724000, 1662328800, 'KW 35-2022', '2022-08-29'], [1662328800, 1662933600, 'KW 36-2022', '2022-09-05'], [1662933600, 1663538400, 'KW 37-2022', '2022-09-12'], [1663538400, 1664143200, 'KW 38-2022', '2022-09-19'], [1664143200, 1664748000, 'KW 39-2022', '2022-09-26'], [1664748000, 1665352800, 'KW 40-2022', '2022-10-03'], [1665352800, 1665957600, 'KW 41-2022', '2022-10-10'], [1665957600, 1666562400, 'KW 42-2022', '2022-10-17'], [1666562400, 1667170800, 'KW 43-2022', '2022-10-24'], [1667170800, 1667775600, 'KW 44-2022', '2022-10-31'], [1667775600, 1668380400, 'KW 45-2022', '2022-11-07'], [1668380400, 1668985200, 'KW 46-2022', '2022-11-14'], [1668985200, 1669590000, 'KW 47-2022', '2022-11-21'], [1669590000, 1670194800, 'KW 48-2022', '2022-11-28'], [1670194800, 1670799600, 'KW 49-2022', '2022-12-05'], [1670799600, 1671404400, 'KW 50-2022', '2022-12-12'], [1671404400, 1672009200, 'KW 51-2022', '2022-12-19'], [1672009200, 1672614000, 'KW 52-2022', '2022-12-26'], [1672614000, 1673218800, 'KW 1-2023', '2023-01-02'], [1673218800, 1673823600, 'KW 2-2023', '2023-01-09'], [1673823600, 1674428400, 'KW 3-2023', '2023-01-16'], [1674428400, 1675033200, 'KW 4-2023', '2023-01-23'], [1675033200, 1675638000, 'KW 5-2023', '2023-01-30'], [1675638000, 1676242800, 'KW 6-2023', '2023-02-06'], [1676242800, 1676847600, 'KW 7-2023', '2023-02-13'], [1676847600, 1677452400, 'KW 8-2023', '2023-02-20'], [1677452400, 1678057200, 'KW 9-2023', '2023-02-27'], [1678057200, 1678662000, 'KW 10-2023', '2023-03-06'],[1678662000, 1679266800, 'KW 11-2023', '2023-03-13'], [1679266800, 1679868000, 'KW 12-2023', '2023-03-20'], [1679868000, 1680472800, 'KW 13-2023', '2023-03-27'], [1680472800, 1681077600, 'KW 14-2023', '2023-04-03'], [1681077600, 1681682400, 'KW 15-2023', '2023-04-10'], [1681682400, 1682287200, 'KW 16-2023', '2023-04-17'], [1682287200, 1682892000, 'KW 17-2023', '2023-04-24']]
+
+
+
+async function init(){
+
+	//slider from https://www.w3schools.com/howto/howto_js_rangeslider.asp
+	var slider = document.getElementById("slider");
+  slider.max = datasets.length;
+
+	// Update the current slider value (each time you drag the slider handle)
+	slider.oninput = function(e) {
+		document.getElementById("date").innerHTML = "7 days starting: " + datasets[this.value][3]
+		chart.update(graphs[this.value])
+	} 
+
+	var graphs = {}
+	for(var i=0; i<datasets.length; i++){
+		graphs[i] = await loadGraph(d3, "data/"+datasets[i][2]+".json")
+	}
+
+	return graphs[1]
+}
+
+function getnetworkProp(graph){
+   // from http://www.claudiobellei.com/2017/02/04/viznetworks/
+   //1) max connection between nodes
+   var maxConnect = Math.max.apply(Math,graph.links.map(function(d) {return d.value;}));   //max connection between nodes
+
+   //2) max fraction value (used to draw nodes radii)
+   var maxFraction = 0;
+   var arr, obj;
+   var maxf = new Array();
+   for (var i=0; i<graph.nodes.length; i++){
+       obj = graph.nodes[i].fraction
+       maxf.push(obj);
+   }
+   maxFraction = maxf.reduce((a, b) => Math.max(a, b), -Infinity);
+   return [maxConnect, maxFraction];
+}
+
+
+function initchart(d3,color)
+{
+  var width = window.innerWidth;
+  var height = window.innerHeight; 
+  const zoom = d3.zoom();
+  const svg = d3.select('.svg-container').append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", [-width / 2, -height / 2, width, height]);
+
+
+  svg.call(d3.zoom()
+      .on("zoom", zoomed));
+
+document.getElementById("Reset").onclick = () => {
+	  location.reload()
+};
+
+
+  function zoomed({transform}) {
+    svg.attr("transform", transform);
+  }
+
+  const simulation = d3.forceSimulation()
+      .force("charge", d3.forceManyBody().strength(-200))
+      .force("link", d3.forceLink().id(d => d.id).distance(100))
+      .force("x", d3.forceX())
+      .force("y", d3.forceY())
+      .on("tick", ticked);
+
+  let link = svg.append("g")
+      .attr("stroke", "#000")
+      .attr("stroke-width", 0.1)
+    .selectAll("line");
+
+  let node = svg.append("g")
+      .attr("stroke", colormark)
+      .attr("stroke-width", 0)
+      .attr("stroke-opacity", 1)
+      .attr("class", "nodes")
+    .selectAll("circle")
+      
+    
+
+
+  let text = svg.append('g')
+  .selectAll('text')
+  .enter().append('text')
+    .attr('font-size', 8)
+    .attr('font-family', "sans-serif")
+    .attr('dx', 0)
+    .attr('dy', 0)
+
+
+
+  svg.selectAll(".nodes").on("click",function(d){
+    var active = d.active? false : true // toggle whether node is active
+            , newStroke = active ? colormark:"grey"
+            , newStrokeIn = active ? "green":"grey"
+            , newStrokeOut = active? colormark: "grey"
+            , newOpacity = active? 0.6: 0.3;
+            d3.selectAll("#"+d.target.attributes.id.nodeValue).style("stroke-opacity", newOpacity);
+            d3.selectAll("#"+d.target.attributes.id.nodeValue).style("stroke-width", 10);
+            d3.selectAll("#"+d.target.attributes.id.nodeValue).attr("stroke", newStroke);
+            d.active =active;
+  })
+
+  function ticked() {
+    node.attr("cx", d => d.x)
+        .attr("cy", d => d.y)
+        .attr("value", d => d.value)
+        .attr("text",d=> d.id)
+
+    link.attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+    text.attr("x", d => d.x-(d.id.length*2))
+      .attr("text", d => d.id)
+      .attr("y", d => d.y)
+  }
+
+
+
+
+  // Terminate the force layout when this cell re-runs.
+  //invalidation.then(() => simulation.stop());
+
+  return Object.assign(svg.node(), {
+    update({nodes, links}) {
+      // Make a shallow copy to protect against mutation, while
+      // recycling old nodes to preserve position and velocity.
+      
+
+      const old = new Map(node.data().map(d => [d.id, d]));
+      
+      nodes = nodes.map(d => Object.assign(old.get(d.id) || {}, d));
+      
+
+
+      links = links.map(d => Object.assign({}, d));
+
+       var maxDistance = 10, //max distance between two nodes
+         minDistance = 1, //min distance betwween two nodes
+         maxRadius = 20, //max radius of circle
+         minRadius = 4, //min radius of circle
+         minLinkwidth = 0, //min width of link
+         maxLinkwidth = 6 //max width of link
+      var [maxConnect, maxFraction] = getnetworkProp({nodes, links})
+
+      simulation.nodes(nodes);
+      simulation.force("link").links(links);
+
+      simulation.alpha(0.4).restart();
+
+      node = node
+        .data(nodes, d => d.id)
+        .join(enter => enter.append("circle")
+          .attr("r", function(d) {return Math.max(minRadius,d.fraction/maxFraction * maxRadius);})
+          .attr("fill", d => color(Math.log(d.fraction/maxFraction))))
+          .attr("id", d => "circle-"+d.id)
+          .attr("stroke", d=> old.has(d.id) ? colormark: colornew)
+          .attr("stroke-opacity", 1)
+          .attr("stroke-width",  d=> old.has(d.id) ? 0: 5)
+          .attr("class", "nodes");
+
+      text = text
+        .data(nodes, d=> d.id)
+        .join(enter => enter.append('text')
+          .text(d => d.id))
+          .attr('font-size', 6)
+          .attr('font-family', "sans-serif")
+
+      link = link
+        .data(links, d => `${d.source.id}\t${d.target.id}`)
+        .join("line");
+
+      const newmap = new Map(node.data().map(d => [d.id, d]));
+      var oldnodes = new Set();
+      var newnodes = new Set();
+      
+      
+      //old.forEach((v, k) => { if(!newmap.has(v.id)){ removed.push(v.id)})
+      old.forEach((v, k) => { oldnodes.add(v.id)})
+      newmap.forEach((v, k) => { newnodes.add(v.id)})
+      //newmap.forEach((v, k) => { if(!newmap.has(v.id)){ removed.push(v.id)} })
+      
+      var removed = new Set([...oldnodes].filter(x => !newnodes.has(x)));
+      var added = new Set([...newnodes].filter(x => !oldnodes.has(x)));
+      var stayed = new Set([...newnodes].filter(x => oldnodes.has(x)));
+      document.getElementById("explanation").innerHTML = removed.size + " hashtags removed, " + added.size + " added, " + stayed.size + " unchanged.";
+
+      document.getElementById("hashtag-list-all").innerHTML = ""
+      document.getElementById("hashtag-list-added").innerHTML = ""
+      document.getElementById("hashtag-list-removed").innerHTML = ""
+      for(const newitem of added){
+        var liEl = document.createElement("li")
+        liEl.innerHTML = newitem
+        console.log(newitem)
+        document.getElementById("hashtag-list-all").appendChild(liEl)
+      }
+      for(const newitem of added){
+        var liEl = document.createElement("li")
+        liEl.innerHTML = newitem
+        console.log(newitem)
+        document.getElementById("hashtag-list-added").appendChild(liEl)
+      }
+      for(const newitem of removed){
+        var liEl = document.createElement("li")
+        liEl.innerHTML = newitem
+        document.getElementById("hashtag-list-removed").appendChild(liEl)
+      }
+      
+      
+    }
+  });
+}
+
+
+
+async function loadGraph(d3, setUrl){
+  let data = await d3.json(setUrl)
+  return data 
+}
+
+let graph = await init()
+
+// Define the range of the color scale
+const colorRange = ["#ee644a", "#f59411"];
+
+// Define the input domain for the color scale
+const colorDomain = [0, 100];
+
+// Create the color scale
+const colorScale = d3.scaleLinear()
+  .domain(colorDomain)
+  .range(colorRange);
+  
+
+let chart = initchart(d3, colorScale)
+chart.update(graph)
+
+</script>
+</body>
