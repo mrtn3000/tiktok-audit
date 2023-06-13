@@ -115,9 +115,54 @@
 // based on https://observablehq.com/@d3/modifying-a-force-directed-graph@109
 var colormark = "#f8b739"
 var colornew = "#70b700"
-var datasets = [[1653861600, 1654466400, 'KW 22-2022', '2022-05-30'], [1654466400, 1655071200, 'KW 23-2022', '2022-06-06'], [1655071200, 1655676000, 'KW 24-2022', '2022-06-13'], [1655676000, 1656280800, 'KW 25-2022', '2022-06-20'], [1656280800, 1656885600, 'KW 26-2022', '2022-06-27'], [1656885600, 1657490400, 'KW 27-2022', '2022-07-04'], [1657490400, 1658095200, 'KW 28-2022', '2022-07-11'], [1658095200, 1658700000, 'KW 29-2022', '2022-07-18'], [1658700000, 1659304800, 'KW 30-2022', '2022-07-25'], [1659304800, 1659909600, 'KW 31-2022', '2022-08-01'], [1659909600, 1660514400, 'KW 32-2022', '2022-08-08'], [1660514400, 1661119200, 'KW 33-2022', '2022-08-15'], [1661119200, 1661724000, 'KW 34-2022', '2022-08-22'], [1661724000, 1662328800, 'KW 35-2022', '2022-08-29'], [1662328800, 1662933600, 'KW 36-2022', '2022-09-05'], [1662933600, 1663538400, 'KW 37-2022', '2022-09-12'], [1663538400, 1664143200, 'KW 38-2022', '2022-09-19'], [1664143200, 1664748000, 'KW 39-2022', '2022-09-26'], [1664748000, 1665352800, 'KW 40-2022', '2022-10-03'], [1665352800, 1665957600, 'KW 41-2022', '2022-10-10'], [1665957600, 1666562400, 'KW 42-2022', '2022-10-17'], [1666562400, 1667170800, 'KW 43-2022', '2022-10-24'], [1667170800, 1667775600, 'KW 44-2022', '2022-10-31'], [1667775600, 1668380400, 'KW 45-2022', '2022-11-07'], [1668380400, 1668985200, 'KW 46-2022', '2022-11-14'], [1668985200, 1669590000, 'KW 47-2022', '2022-11-21'], [1669590000, 1670194800, 'KW 48-2022', '2022-11-28'], [1670194800, 1670799600, 'KW 49-2022', '2022-12-05'], [1670799600, 1671404400, 'KW 50-2022', '2022-12-12'], [1671404400, 1672009200, 'KW 51-2022', '2022-12-19'], [1672009200, 1672614000, 'KW 52-2022', '2022-12-26'], [1672614000, 1673218800, 'KW 1-2023', '2023-01-02'], [1673218800, 1673823600, 'KW 2-2023', '2023-01-09'], [1673823600, 1674428400, 'KW 3-2023', '2023-01-16'], [1674428400, 1675033200, 'KW 4-2023', '2023-01-23'], [1675033200, 1675638000, 'KW 5-2023', '2023-01-30'], [1675638000, 1676242800, 'KW 6-2023', '2023-02-06'], [1676242800, 1676847600, 'KW 7-2023', '2023-02-13'], [1676847600, 1677452400, 'KW 8-2023', '2023-02-20'], [1677452400, 1678057200, 'KW 9-2023', '2023-02-27'], [1678057200, 1678662000, 'KW 10-2023', '2023-03-06'],[1678662000, 1679266800, 'KW 11-2023', '2023-03-13'], [1679266800, 1679868000, 'KW 12-2023', '2023-03-20'], [1679868000, 1680472800, 'KW 13-2023', '2023-03-27'], [1680472800, 1681077600, 'KW 14-2023', '2023-04-03'], [1681077600, 1681682400, 'KW 15-2023', '2023-04-10'], [1681682400, 1682287200, 'KW 16-2023', '2023-04-17'], [1682287200, 1682892000, 'KW 17-2023', '2023-04-24']]
 
+function getWeekNumber(date) {
+  var oneJan = new Date(date.getFullYear(), 0, 1);
+  return Math.ceil(((date - oneJan) / 86400000 + oneJan.getDay() + 1) / 7);
+}
 
+function formatDate(date) {
+  var year = date.getFullYear();
+  var month = (date.getMonth() + 1).toString().padStart(2, '0');
+  var day = date.getDate().toString().padStart(2, '0');
+  return year + '-' + month + '-' + day;
+}
+
+function createWeekArray() {
+  var weekArray = [];
+  var currentDate = new Date();
+  var endDate = new Date(currentDate);
+  endDate.setDate(endDate.getDate() - 14); // Set the end date as two weeks before the current date
+  var startDate = new Date('2022-05-30'); // Set the start date
+
+  while (startDate <= endDate) {
+    var startOfWeek = new Date(startDate);
+    var dayOfWeek = startOfWeek.getDay();
+    var diff = (dayOfWeek === 0 ? 6 : dayOfWeek - 1); // Calculate the difference to get to Monday
+    startOfWeek.setDate(startOfWeek.getDate() - diff); // Get the start of the current week
+    var endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(endOfWeek.getDate() + 6); // Get the end of the current week
+
+    var weekSubArray = [
+      Math.floor(startOfWeek.getTime() / 1000), // Convert to Unix timestamp
+      Math.floor(endOfWeek.getTime() / 1000), // Convert to Unix timestamp
+      startOfWeek.getFullYear() + '-' + 'KW' + getWeekNumber(startOfWeek), // Get the week number
+      formatDate(startOfWeek) // Format the date as 'YYYY-MM-DD'
+    ];
+
+    weekArray.push(weekSubArray);
+
+    startOfWeek.setDate(startOfWeek.getDate() + 7); // Move to the next week
+    startDate = startOfWeek; // Update the start date
+  }
+
+  return weekArray;
+}
+
+var datasets = createWeekArray();
+console.log(datasets)
+var currendataset = 0;
+var graphs = {}
 
 async function init(){
 
@@ -127,13 +172,48 @@ async function init(){
 
 	// Update the current slider value (each time you drag the slider handle)
 	slider.oninput = function(e) {
-		document.getElementById("date").innerHTML = "7 days starting: " + datasets[this.value][3]
-		chart.update(graphs[this.value])
+    currendataset = this.value;
+  
+    if(graphs[currendataset]  ){
+      document.getElementById("date").innerHTML = "7 days starting: " + datasets[this.value][3];
+      chart.update(graphs[currendataset]);
+      for(i=currendataset; i<=currendataset+4; i++){
+        if(!graphs[i] && datasets[i]){
+          graphs[i] = loadGraph(d3, datasets[i][2], i)
+        }
+      }
+    }else{
+      if(datasets[currendataset]){
+        graphs[currendataset] = loadGraph(d3, datasets[i][2], currendataset).then(function(){
+          document.getElementById("date").innerHTML = "7 days starting: " + datasets[currendataset][3];
+          chart.update(graphs[currendataset]);
+          for(i=currendataset; i<=currendataset+4; i++){
+            console.log(i)
+            if(!graphs[i]){
+              graphs[i] = loadGraph(d3, datasets[i][2], i).then(function(data){
+              console.log(data)
+              })
+            }
+          }
+          for(i=currendataset-1; i<=currendataset-4; i--){
+            if(!graphs[i]){
+            graphs[i] = loadGraph(d3, datasets[i][2], i).then(function(){
+              console.log("Pre-loaded " + datasets[i][2])
+              })
+            }
+          }
+        })
+      }
+
+    }
+
+    
+
 	} 
 
-	var graphs = {}
-	for(var i=0; i<datasets.length; i++){
-		graphs[i] = await loadGraph(d3, "data/"+datasets[i][2]+".json")
+
+	for(var i=0; i<5; i++){
+		graphs[i] = await loadGraph(d3, datasets[i][2])
 	}
 
 	return graphs[1]
@@ -316,13 +396,13 @@ document.getElementById("Reset").onclick = () => {
       for(const newitem of added){
         var liEl = document.createElement("li")
         liEl.innerHTML = newitem
-        console.log(newitem)
+        
         document.getElementById("hashtag-list-all").appendChild(liEl)
       }
       for(const newitem of added){
         var liEl = document.createElement("li")
         liEl.innerHTML = newitem
-        console.log(newitem)
+        
         document.getElementById("hashtag-list-added").appendChild(liEl)
       }
       for(const newitem of removed){
@@ -338,9 +418,11 @@ document.getElementById("Reset").onclick = () => {
 
 
 
-async function loadGraph(d3, setUrl){
+async function loadGraph(d3, dataset, setno){
+  var setUrl =  "data/"+dataset+".json"
   let data = await d3.json(setUrl)
-  return data 
+  graphs[setno] = data
+  return data
 }
 
 let graph = await init()
