@@ -10,9 +10,10 @@ The purpose of these files is for:
 
 | Source              | Variable count | Date       |
 |---------------------|----------------|------------|
-| Web                 | 186            | 06. Jul 23 |
-| Android app         | 845            | 06. Jul 23 |
-| TikTok Research API | 32             | 06. Jul 23 |
+| [TikTok Research API](https://github.com/snv-berlin/tiktok-audit/blob/main/Data%20Access/tiktok_researchapi_annotated_metadata_list.csv) | 32             | 06. Jul 23 |
+| [Web](https://github.com/snv-berlin/tiktok-audit/blob/main/Data%20Access/tiktok_web_annotated_metadata_list.csv)                 | 186            | 06. Jul 23 |
+| [Android app](https://github.com/snv-berlin/tiktok-audit/blob/main/Data%20Access/tiktok_app_annotated_metadata_list.csv)         | 845            | 06. Jul 23 |
+
 
 # Contribute
 
