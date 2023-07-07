@@ -1,0 +1,187 @@
+property,description
+adAuthorization,-unknown-
+adLabelVersion,-unknown-
+author,-unknown-
+authorId,Unique author id
+authorPrivate,-unknown-
+authorSecId,-unknown-
+authorStats.diggCount,Number of videos or comments the user has liked
+authorStats.followerCount,-unknown-
+authorStats.followingCount,-unknown-
+authorStats.heart,-unknown-
+authorStats.heartCount,Number of likes received by the user
+authorStats.videoCount,Number of videos posted by user
+avatarThumb,-unknown-
+BAInfo,-unknown-
+capcutAnchors,-unknown-
+challenges._id.$oid,-unknown-
+challenges.coverLarger,-unknown-
+challenges.coverMedium,-unknown-
+challenges.coverThumb,-unknown-
+challenges.desc,Description of the challenge
+challenges.id,Challenge ID
+challenges.isCommerce,Whether the challenge is part of an ad campaign 
+challenges.profileLarger,-unknown-
+challenges.profileMedium,-unknown-
+challenges.profileThumb,-unknown-
+challenges.stats.videoCount,"Number of videos ""using"" this challenge"
+challenges.stats.viewCount,"Number of videos ""using"" this challenge that have been viewed"
+challenges.title,Name of the challenge
+channelTags,-unknown-
+collected,-unknown-
+comments,-unknown-
+contentLocation.address.addressCountry,-unknown-
+contentLocation.address.addressLocality,-unknown-
+contentLocation.address.addressRegion,-unknown-
+contentLocation.address.streetAddress,-unknown-
+contents.desc,-unknown-
+contents.textExtra.awemeId,-unknown-
+contents.textExtra.end,-unknown-
+contents.textExtra.hashtagId,-unknown-
+contents.textExtra.hashtagName,-unknown-
+contents.textExtra.isCommerce,-unknown-
+contents.textExtra.questionContent,-unknown-
+contents.textExtra.questionId,-unknown-
+contents.textExtra.secUid,-unknown-
+contents.textExtra.start,-unknown-
+contents.textExtra.subType,-unknown-
+contents.textExtra.userId,-unknown-
+contents.textExtra.userUniqueId,-unknown-
+createTime,Timestamp of when the video was posted
+createTimestamp,Timestamp of when the video was posted
+desc,-unknown-
+digged,-unknown-
+diversificationId,-unknown-
+downloadSetting,-unknown-
+duetDisplay,-unknown-
+duetEnabled,-unknown-
+duetInfo.duetFromId,-unknown-
+effectStickers.ID,-unknown-
+effectStickers.name,Name of the effect used in a video
+effectStickers.stickerStats.useCount,-unknown-
+forFriend,-unknown-
+imagePost.cover.imageHeight,-unknown-
+imagePost.cover.imageWidth,-unknown-
+imagePost.images.imageHeight,-unknown-
+imagePost.images.imageWidth,-unknown-
+imagePost.shareCover.imageHeight,-unknown-
+imagePost.shareCover.imageWidth,-unknown-
+imagePost.title,-unknown-
+indexEnabled,-unknown-
+isAd,-unknown-
+isContentClassified,-unknown-
+itemCommentStatus,-unknown-
+itemMute,-unknown-
+locationCreated,-unknown-
+maskType,-unknown-
+music.album,-unknown-
+music.authorName,-unknown-
+music.collected,-unknown-
+music.coverLarge,-unknown-
+music.coverMedium,-unknown-
+music.coverThumb,-unknown-
+music.duration,Length in seconds
+music.id,Unique id of the video's music
+music.original,Whether music originated from the user
+music.playUrl,Link to mp3 file of the video's music
+music.preciseDuration.preciseAuditionDuration,-unknown-
+music.preciseDuration.preciseDuration,-unknown-
+music.preciseDuration.preciseShootDuration,-unknown-
+music.preciseDuration.preciseVideoDuration,-unknown-
+music.scheduleSearchTime,-unknown-
+music.title,-unknown-
+nickname,Profile display name
+officalItem,-unknown-
+originalItem,-unknown-
+poi.address,-unknown-
+poi.city,-unknown-
+poi.cityCode,-unknown-
+poi.country,-unknown-
+poi.countryCode,-unknown-
+poi.fatherPoiName,-unknown-
+poi.id,-unknown-
+poi.name,-unknown-
+poi.province,-unknown-
+poi.ttTypeCode,-unknown-
+poi.ttTypeNameMedium,-unknown-
+poi.ttTypeNameSuper,-unknown-
+poi.ttTypeNameTiny,-unknown-
+poiCode,-unknown-
+privateItem,-unknown-
+scheduleTime,-unknown-
+secret,-unknown-
+shareEnabled,-unknown-
+showNotPass,-unknown-
+stats.collectCount,-unknown-
+stats.commentCount,Number of comments video had at time of scraping
+stats.diggCount,Number of likes at time of scraping
+stats.playCount,Number of times video had been played at time of scraping
+stats.shareCount,Number of times video was shared at time of scraping
+stickersOnItem.stickerType,-unknown-
+stitchDisplay,-unknown-
+stitchEnabled,Wether stitching functionality is enabled
+takeDown,-unknown-
+textExtra._id.$oid,-unknown-
+textExtra.awemeId,-unknown-
+textExtra.end,Hashtag text position end
+textExtra.hashtagId,Unique hashtag id
+textExtra.hashtagName,Hashtag text
+textExtra.isCommerce,Whether the hashtag is part of an ad campaign?
+textExtra.questionContent,-unknown-
+textExtra.questionId,-unknown-
+textExtra.secUid,-unknown-
+textExtra.start,Hashtag text position start
+textExtra.subType,-unknown-
+textExtra.userId,-unknown-
+textExtra.userUniqueId,-unknown-
+video.bitrate,Bitrate
+video.bitrateInfo.Bitrate,-unknown-
+video.bitrateInfo.CodecType,Compression standard
+video.bitrateInfo.GearName,-unknown-
+video.bitrateInfo.PlayAddr.DataSize,-unknown-
+video.bitrateInfo.PlayAddr.FileCs,-unknown-
+video.bitrateInfo.PlayAddr.FileHash,-unknown-
+video.bitrateInfo.PlayAddr.Uri,-unknown-
+video.bitrateInfo.PlayAddr.UrlKey,-unknown-
+video.bitrateInfo.QualityType,-unknown-
+video.codecType,-unknown-
+video.cover,Still image that available in video feed
+video.definition,Resolution
+video.downloadAddr,-unknown-
+video.duration,Duration in seconds
+video.dynamicCover,Short clip of video
+video.encodedType,Encoding label
+video.encodeUserTag,-unknown-
+video.format,Size
+video.height,Vertical size in pixels
+video.id,Unique video id
+video.originCover,First frame of the video
+video.playAddr,-unknown-
+video.ratio,Aspect ratio
+video.reflowCover,-unknown-
+video.subtitleInfos.Format,-unknown-
+video.subtitleInfos.LanguageCodeName,-unknown-
+video.subtitleInfos.LanguageID,-unknown-
+video.subtitleInfos.Size,-unknown-
+video.subtitleInfos.Source,-unknown-
+video.subtitleInfos.Url,-unknown-
+video.subtitleInfos.UrlExpire,-unknown-
+video.subtitleInfos.Version,-unknown-
+video.subtitleInfos.VideoSubtitleID,Unique subtitle ID
+video.subtitles.lang,-unknown-
+video.videoQuality,Quality label
+video.volumeInfo.Loudness,-unknown-
+video.volumeInfo.Peak,-unknown-
+video.width,Horizontal size in pixels
+video.zoomCover.240,-unknown-
+video.zoomCover.480,-unknown-
+video.zoomCover.720,-unknown-
+video.zoomCover.960,-unknown-
+videoSuggestWordsList.video_suggest_words_struct.hint_text,-unknown-
+videoSuggestWordsList.video_suggest_words_struct.scene,-unknown-
+videoSuggestWordsList.video_suggest_words_struct.words.word,-unknown-
+videoSuggestWordsList.video_suggest_words_struct.words.word_id,-unknown-
+warnInfo.key,-unknown-
+warnInfo.lang,-unknown-
+warnInfo.text,-unknown-
+warnInfo.url,-unknown-

@@ -1,0 +1,33 @@
+property,description
+variable,description
+video.id,"Unique identifier for the TikTok video. Also called ""item_id"" or ""video_id"""
+video.create_time,UTC Unix epoch (in seconds) of when the TikTok video was posted. (Inherited field from TNS research API)
+video.username,The video's author's username
+video.region_code,A two digit code for the country the video was posted in
+video.video_description,"The description of the video, also known as the title"
+video.music_id,The music_id used in the video
+video.like_count,The number of likes the video has received.
+video.comment_count,The number of comments the video has received.
+video.share_count,The number of shares the video has received.
+video.view_count,The number of video views the video has received.
+video.effect_id,The list of effect ids applied on the video
+video.hashtag_names,The list of hashtag names that the video participates in
+video.playlist_id,The ID of playlist that the video belongs to
+video.voice_to_text,"Voice to text and subtitles (for videos that have voice to text features on, show the texts already generated)"
+author.video_count,The number of videos the user has posted
+author.avatar_url,The url to a user's profile picture
+author.display_name,The user's display name / nickname
+author.follower_count,The number of followers the user has
+author.likes_count,The total number of likes the user has accumulated
+author.open_id,The unique open_id of a user
+author.bio_description,The user's bio description
+author.following_count,The number of people the user is following
+author.is_verified,"The user's verified status. True if verified, false if not"
+author.is_private,If the user's TikTok account is public
+comment.id,The unique ID for the comment
+comment.text,The text within the comment
+comment.video_id,The ID of the video or item that the comment is under
+comment.parent_comment_id,"The ID of the comment's parent comment, if any"
+comment.like_count,The number of likes a comment has
+comment.replay_count,The number of replies a comment has
+comment.create_time,The unix timestamp that the comment was created on
