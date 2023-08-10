@@ -10,10 +10,10 @@ profile:
   image_circular: false # crops the image to make it circular
   address:
 
-news: true  # includes a list of news items
-latest_posts: true  # includes a list of the newest posts
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+news: false  # includes a list of news items
+latest_posts: false  # includes a list of the newest posts
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: false  # includes social icons at the bottom of the page
 ---
 
 Recommender systems of internet platforms play a crucial role in the everyday lives of many people. Whether we use a search engine, social media, or video platform, algorithms, artificial intelligence (AI) and statistical calculations determine which content is displayed to users, in which order, and in which context. Despite the importance of these systems for our daily lives, but also the way we inform ourselves and how we communicate with each other,  their design is difficult to understand for users as well as for politicians, researchers, and civil society. Whether certain content is systematically disadvantaged or favored, whether recommender systems amplify hate and disinformation, and how user behavior, algorithms, and platform design intertwine are highly relevant questions for democracy. Politicians have reacted to this by developing new regulatory measures to ensure higher transparency and independent auditing of algorithmic systems.  
