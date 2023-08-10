@@ -2,23 +2,23 @@
     {% include metadata.html %}
 
     <!-- Bootstrap & MDB -->
-    <link href="{{ '/assets/css/bootstrap.min.css | relative_url }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/assets/css/mdb.min.css | relative_url }}" />
+    <link href="{{ '/assets/css/bootstrap.min.css' | relative_url }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/mdb.min.css' | relative_url }}" />
 
     <!-- Bootstrap Table -->
-    <link defer rel="stylesheet" href="{{ '/assets/css/bootstrap-table.min.css | relative_url }}">
+    <link defer rel="stylesheet" href="{{ '/assets/css/bootstrap-table.min.css' | relative_url }}">x
 
     <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="{{ '/assets/css//all.min.css | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/academicons.min.css | relative_url }}">
-    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/googlefonts.css | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/all.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/academicons.min.css' | relative_url }}">
+    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/googlefonts.css' | relative_url }}">
 
     <!-- Code Syntax Highlighting -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/{{ site.highlight_theme_light | append: '.css' }}" media="" id="highlight_theme_light" />
+    <link rel="stylesheet" href="/assets/css/{{ site.highlight_theme_light | append: '.css' }}" media="" id="highlight_theme_light" />
 
     {% if page.toc and page.toc.sidebar %}
     <!-- Sidebar Table of Contents -->
-    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet" />
+    <link href="{{ '/assets/css/bootstrap-toc.min.css' | relative_url }}" rel="stylesheet" />
     {% endif %}
 
     <!-- Styles -->
@@ -32,7 +32,7 @@
 
     <!-- Dark Mode -->
     {% if site.enable_darkmode %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/{{ site.highlight_theme_dark | append: '.css' }}" media="none" id="highlight_theme_dark" />
+    <link rel="stylesheet" href="/assets/css/{{ site.highlight_theme_dark | append: '.css' }}" media="none" id="highlight_theme_dark" />
     <script src="{{ '/assets/js/theme.js' | relative_url | bust_file_cache }}"></script>
     <script src="{{ '/assets/js/dark_mode.js' | relative_url | bust_file_cache }}"></script>
     {% endif %}
