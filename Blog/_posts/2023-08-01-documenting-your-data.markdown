@@ -3,8 +3,8 @@ layout: post
 title: documenting your data
 date: 2023-08-01 15:09:00
 description: an example of a blog post with some code
-tags: formatting code
-categories: sample-posts
+tags: code
+categories: how-to
 featured: true
 ---
 **Documenting your data**
