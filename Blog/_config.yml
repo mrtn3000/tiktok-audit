@@ -113,7 +113,7 @@ contact_note: >
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: auditing TikTok # blog_name will be displayed in your blog page
+blog_name: Auditing TikTok # blog_name will be displayed in your blog page
 blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
 blog_description: > 
   Our journey into auditing TikTok's recommender systems.
