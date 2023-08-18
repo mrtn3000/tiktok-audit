@@ -5,6 +5,7 @@ date: 2023-08-18 09:20:00
 description: A short analysis of political ads and TikToks new advertisement library
 tags: ads
 categories: analysis
+featured: true
 related_posts: false
 ---
 *By: [Alexander Hohlfeld](https://www.stiftung-nv.de/de/person/alexander-hohlfeld)*
@@ -15,8 +16,9 @@ Until recently it wasn't possible to systematically prove whether and how strong
 
 In the corresponding [FAQ](https://library.tiktok.com/faq) they point out, that “TikTok does not show political or election ads on the platform. **So you will not be able to find ads of political nature in the Commercial Content Library**”. But surprisingly, it is not complicated at all to find such ads. Even though the library lacks important information, the way how easy it is to find political advertising raises questions on how seriously TikTok enforces these guidelines. A simple [search for the abbreviations](https://twitter.com/favstats/status/1681991000623816705) of German political parties already shows numerous examples of ads placed by politicians or parties as well as a seemingly endless number of political ads by other people. Especially politicians of the “AfD” seem to use ads on TikTok systematically to reach out to potential voters. We found examples of accounts from members of the German parliament (MdBs) and members from the federal parliaments (MdLs). Besides that, we found even more political ads promoting the AfD, that are not associated with an official account of a member of the party. Even though other parties don’t seem to use TikTok ads to a similar extent, we also found examples of accounts of city and local chapters other of political parties advertising political content.
 
-![A screenshot of search results for "AFD"](assets/img/tt_adlib_afd.png)
-![A screenshot of search results for "SPD Frankfurt"](assets/img/tt_adlib_afd.png)
+{% include figure.html path="/assets/img/tt_adlib_afd.png" class="img-fluid rounded z-depth-1" zoomable=true %} 
+{% include figure.html path="/assets/img/tt_adlib_spd_ffm.png" class="img-fluid rounded z-depth-1" zoomable=true %} 
+*Screenshots from the search results for different political parties*
 
 There are many indications that the German context is no coincidence and the political ad policies are not strongly enforced in other contexts as well. Journalists of the [Forbes](https://www.forbes.com/sites/iainmartin/2023/07/26/tiktok-chinese-propaganda-ads-europe/) magazine revealed even that “TikTok has pushed Chinese propaganda ads to millions across Europe”.
 
