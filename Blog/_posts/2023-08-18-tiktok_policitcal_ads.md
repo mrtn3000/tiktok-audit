@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Diving into TikTok's Ad Library: Surfacing with Missing Data and Unenforced Guidelines
-date: 2023-08-18
+title: "Diving into TikTok's Ad Library: Surfacing with Missing Data and Unenforced Guidelines"
+date: 2023-08-18 09:20:00
 description: A short analysis of political ads and TikToks new advertisement library
 tags: ads
 categories: analysis
 related_posts: false
 ---
-*By: (Alexander Hohlfeld)[https://www.stiftung-nv.de/de/person/alexander-hohlfeld]*
+*By: [Alexander Hohlfeld](https://www.stiftung-nv.de/de/person/alexander-hohlfeld)*
 
 In April 2020 TikTok announced their new “[Guidelines for advertisements on TikTok](https://newsroom.tiktok.com/de-de/richtlinien-fur-werbeanzeigen-auf-tiktok)”, which explicitly forbid political advertisements on the platform. TikTok claimed that they “will not allow paid ads that explicitly promote or oppose political candidates, officeholders, political parties, or groups or issues at the federal, state, or local levels”. An [investigation](https://foundation.mozilla.org/en/campaigns/tiktok-political-ads/) by Mozilla in 2021 already had shown that the political ad policies can easily be circumvented with influencer marketing. Therefore, TikTok [updated](https://newsroom.tiktok.com/de-de/aktualisierung-der-richtlinien-fuer-politische-accounts) these guidelines and introduced a “comprehensive monetization block for political accounts”.
 
