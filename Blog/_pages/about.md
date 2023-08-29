@@ -1,7 +1,7 @@
 ---
 layout: about
 title: about
-permalink: /
+permalink: /about/
 subtitle: Our journey into auditing TikTok's recommender systems.
 profile:
   align:
