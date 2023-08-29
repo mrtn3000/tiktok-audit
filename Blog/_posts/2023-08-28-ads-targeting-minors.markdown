@@ -8,7 +8,7 @@ categories: ad-libary
 featured: true
 related_posts: false
 ---
-*By: [Martin Degeling](https://www.stiftung-nv.de/de/person/dr-martin-degeling) & [Anna Semanova](https://www.stiftung-nv.de/de/person/anna-semenova)*
+*By: [Martin Degeling](https://www.stiftung-nv.de/de/person/dr-martin-degeling) & [Anna Semenova](https://www.stiftung-nv.de/de/person/anna-semenova)*
 
 
 Owner: Martin
