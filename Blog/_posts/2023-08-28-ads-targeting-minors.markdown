@@ -24,8 +24,7 @@ Here is how we come to that conclusion:
 More than 7.000.000 ads in the ad library have been targeted at a German audience since October 2022. Most ads are not targeted at any specific age group, which means all age groups except 13-17 are listed. But over 3000 have been targeted only at minors (ages 13-17). And out of those, only 22 have been removed. 
 
 This is not surprising, in general. TikTok only announced an ending to this practice in July. Therefore, we expected to see a drop in the number of ads targeted at minors after July 11th. But this is not the case. The following histogram shows the number of ads targeted at minors per day over the whole time span. There is no indication that targeting minors has stopped or even declined since July 11th.  
-
-
+-
 {% include figure.html path="/assets/img/tt_adtargeting_minors_histogram.png" class="img-fluid rounded z-depth-1" zoomable=true %} 
 *Histogram of the number of ads targeting only users 13-17 years old*
 
