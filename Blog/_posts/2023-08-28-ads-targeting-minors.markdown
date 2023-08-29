@@ -25,7 +25,7 @@ More than 7.000.000 ads in the ad library have been targeted at a German audienc
 
 This is not surprising, in general. TikTok only announced an ending to this practice in July. Therefore, we expected to see a drop in the number of ads targeted at minors after July 11th. But this is not the case. The following histogram shows the number of ads targeted at minors per day over the whole time span. There is no indication that targeting minors has stopped or even declined since July 11th.  
 
-{% include figure.html path="/assets/img/tt_adtargeting_minors_histogram.png" class="img-fluid rounded z-depth-1" zoomable=true %} 
+{% include figure.html path="/assets/img/tt_adtargeting_minors_histogram.svg" class="img-fluid rounded z-depth-1" zoomable=true %} 
 *Histogram of the number of ads targeting only users 13-17 years old*
 
 While targeting only minors is not super common in Germany, the fact that it is still happening, although TikTok claimed to have disabled it, is surprising. See, for example, this [Warner Brothers ad](https://library.tiktok.com/ads/detail/?ad_id=1773031834457089) for the movie Meg2. It is targeted at male users between 13-17 and the “audience” feature is set to “yes”. Enabling this feature means that ads are “**based on the users' on and off-TikTok activity as specified by the advertiser.”** Activity-based targeting is explicitly mentioned in the TikTok press release as being deactivated by July 11th.
