@@ -24,7 +24,7 @@ Here is how we come to that conclusion:
 More than 7.000.000 ads in the ad library have been targeted at a German audience since October 2022. Most ads are not targeted at any specific age group, which means all age groups except 13-17 are listed. But over 3000 have been targeted only at minors (ages 13-17). And out of those, only 22 have been removed. 
 
 This is not surprising, in general. TikTok only announced an ending to this practice in July. Therefore, we expected to see a drop in the number of ads targeted at minors after July 11th. But this is not the case. The following histogram shows the number of ads targeted at minors per day over the whole time span. There is no indication that targeting minors has stopped or even declined since July 11th.  
--
+
 {% include figure.html path="/assets/img/tt_adtargeting_minors_histogram.png" class="img-fluid rounded z-depth-1" zoomable=true %} 
 *Histogram of the number of ads targeting only users 13-17 years old*
 
@@ -36,15 +36,15 @@ The screenshot below shows that TikTok implemented at least some kind of measure
 
 <div class="row justify-content-sm-center"><div class="col-sm-4 mt-3 mt-md-0">
 {% include figure.html path="/assets/img/tt_targeting_13-17_estimate.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-*Screenshot from the TikTok App not-showing estimates for the audience size for 13-17 yo*
 </div></div>
+*Screenshot from the TikTok App not-showing estimates for the audience size for 13-17 yo*
 
 However, this limited data disclosure has only been implemented for the estimated audience. After specifying the targeting criteria for an ad, we are asked to specify the budget and duration of the ad placement. In that process (as seen in the screenshot below) TikTok discloses our ads' “Estimated video views”. While TikTok does not disclose the exact audience size of 13-17-year-olds in Germany who are interested in Education, we now see a lower bound for the same target group and learn that about 266.519 to 709.520 users in that audience are expected to be online within a day.
 
 <div class="row justify-content-sm-center"><div class="col-sm-4 mt-3 mt-md-0">
 {% include figure.html path="/assets/img/tt_targeting_13-17_education_estimate.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-*Screenshot from the TikTok App showing estimated views from the target group*
 </div></div>
+*Screenshot from the TikTok App showing estimated views from the target group*
 
 The fact that targeting minors with ads targeting not only their age, but also gender and interests, which TikTok infers from user behaviour, is not only in violation with TikTok's own announcement but also the Digital Services Act that prohibits this type of advertising.
 
