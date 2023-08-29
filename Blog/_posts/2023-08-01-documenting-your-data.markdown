@@ -5,7 +5,7 @@ date: 2023-08-01 15:09:00
 description: an example of a blog post with some code
 tags: code
 categories: how-to
-featured: true
+featured: false
 ---
 # Documenting your data
 

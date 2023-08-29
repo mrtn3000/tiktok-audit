@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "🔞 Ad-Targeting for minors still exists but it shouldn't"
-date: 2023-08-18 09:20:00
+date: 2023-08-28 18:00:00
 description: An data analysis of ads targeting minors on a set of 7.000.000 ads shows that, altough TikTok claimed it ended the practice, still exists
-tags: ads
-categories: analysis
+tags: ads, analysis
+categories: ad-libary
 featured: true
 related_posts: false
 ---
@@ -35,16 +35,17 @@ Out of curiosity, we wanted to see what changes TikTok had implemented to preven
 
 The screenshot below shows that TikTok implemented at least some kind of measure. When selecting 13-17 as your audience, the interface says *“Metrics cannot be displayed due to data security requirements for minors”.*
 
-
+<div class="row justify-content-sm-center"><div class="col-sm-4 mt-3 mt-md-0">
 {% include figure.html path="/assets/img/tt_targeting_13-17_estimate.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 *Screenshot from the TikTok App not-showing estimates for the audience size for 13-17 yo*
+</div></div>
 
 However, this limited data disclosure has only been implemented for the estimated audience. After specifying the targeting criteria for an ad, we are asked to specify the budget and duration of the ad placement. In that process (as seen in the screenshot below) TikTok discloses our ads' “Estimated video views”. While TikTok does not disclose the exact audience size of 13-17-year-olds in Germany who are interested in Education, we now see a lower bound for the same target group and learn that about 266.519 to 709.520 users in that audience are expected to be online within a day.
 
-
-
+<div class="row justify-content-sm-center"><div class="col-sm-4 mt-3 mt-md-0">
 {% include figure.html path="/assets/img/tt_targeting_13-17_education_estimate.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 *Screenshot from the TikTok App showing estimated views from the target group*
+</div></div>
 
 The fact that targeting minors with ads targeting not only their age, but also gender and interests, which TikTok infers from user behaviour, is not only in violation with TikTok's own announcement but also the Digital Services Act that prohibits this type of advertising.
 
@@ -53,7 +54,7 @@ PS: Here is a list of the advertisers that target minors most often:
 ```
 Warner Bros. Entertainment GmbH                          283
 Non-trivial                                               93
-	eBay Kleinanzeigen GmbH                                   63
+eBay Kleinanzeigen GmbH                                   63
 Bayerischer Jugendring                                    62
 Scoolio GmbH                                              60
 GHIS School                                               59
