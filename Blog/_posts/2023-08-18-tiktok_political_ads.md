@@ -3,10 +3,10 @@ layout: post
 title: "Diving into TikTok's Ad Library: Surfacing with Missing Data and Unenforced Guidelines"
 date: 2023-08-18 09:20:00
 description: A short analysis of political ads and TikToks new advertisement library
-tags: ads, analysis
+tags: ads, analysis, political-ads
 categories: ad-library
 featured: true
-related_posts: false
+related_posts: true
 ---
 *By: [Alexander Hohlfeld](https://www.stiftung-nv.de/de/person/alexander-hohlfeld)*
 
