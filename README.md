@@ -1,5 +1,5 @@
 # TikTok Audit
-A collection of data and information related to our risk audit of tiktoks recommender system.
+A collection of code, data and information related to our audit of TikTok.
 
 # Updates
 * 2023-07-07 We have published an extend [list of variables](https://github.com/snv-berlin/tiktok-audit/tree/main/Data%20Access) TikTok uses 
