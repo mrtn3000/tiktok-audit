@@ -2,14 +2,15 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Auditing TikTok # the website title (if blank, full name will be used instead)
-first_name: Stiftung Neue Verantwortung e. V.
+title: auditing TikTok # the website title (if blank, full name will be used instead)
+first_name:
 middle_name:
 last_name:
 email: info@stiftung-nv.de
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Auditing TikTok.
+  our journey into TikTok's recommender systems
 footer_text: >
+  <a href="https://www.stiftung-nv.de/en" target="_blank">Stiftung Neue Verantwortung</a>. 
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 keywords: TikTok, audit, recommender systems, systemic risk, digital services act  # add your own keywords or leave empty
 
@@ -17,9 +18,9 @@ lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🔍  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://tiktok-audit.com # the base hostname & protocol for your site
-baseurl: / # the subpath of your site, e.g. /blog/
+baseurl: # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
-impressum_path: /about/ # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
+impressum_path: /legal/ # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 
 # -----------------------------------------------------------------------------
 # Theme
@@ -112,10 +113,10 @@ contact_note: >
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Auditing TikTok # blog_name will be displayed in your blog page
+blog_name: auditing TikTok # blog_name will be displayed in your blog page
 blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
 blog_description: > 
-  Our journey into auditing TikTok's recommender systems.
+  our journey into TikTok's recommender systems
 permalink: /blog/:year/:title/
 
 # Pagination

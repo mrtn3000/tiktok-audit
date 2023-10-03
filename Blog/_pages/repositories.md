@@ -1,13 +1,11 @@
 ---
 layout: page
-permalink: /repositories/
-title: repositories
-description: Here you will find some relevant repos.
+permalink: /code/
+title: code
+description: In this repository you'll find some of the code we've developed to look into TikTok.
 nav: true
 nav_order: 3
 ---
-
-## Our own
 
 {% if site.data.repositories.github_repos %}
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
@@ -16,7 +14,3 @@ nav_order: 3
   {% endfor %}
 </div>
 {% endif %}
-
-&nbsp;
-## Others
-(Coming soon!)

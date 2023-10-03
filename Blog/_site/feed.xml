@@ -1,44 +1,214 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-08-11T17:00:58+02:00</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">auditing TikTok</title><subtitle>Auditing TikTok.
-</subtitle><entry><title type="html">sample SNV notebook</title><link href="http://localhost:4000/blog/blog/2023/sample-notebook/" rel="alternate" type="text/html" title="sample SNV notebook" /><published>2023-08-11T00:00:00+02:00</published><updated>2023-08-11T00:00:00+02:00</updated><id>http://localhost:4000/blog/blog/2023/sample-notebook</id><content type="html" xml:base="http://localhost:4000/blog/blog/2023/sample-notebook/"><![CDATA[<p>Here’s one of Matin’s jupyter notebooks as an example:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-10-03T17:19:21+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">auditing TikTok</title><subtitle>our journey into TikTok&apos;s recommender systems
+</subtitle><entry><title type="html">🔭 We found 100 political ads on TikTok Germany</title><link href="http://localhost:4000/blog/2023/We-found-100-political-ads-on-TikTok-Germany/" rel="alternate" type="text/html" title="🔭 We found 100 political ads on TikTok Germany" /><published>2023-09-25T12:00:00+02:00</published><updated>2023-09-25T12:00:00+02:00</updated><id>http://localhost:4000/blog/2023/We-found-100-political-ads-on-TikTok-Germany</id><content type="html" xml:base="http://localhost:4000/blog/2023/We-found-100-political-ads-on-TikTok-Germany/"><![CDATA[<p><em>By: <a href="https://www.stiftung-nv.de/de/person/anna-semenova">Anna Semenova</a> and <a href="https://www.stiftung-nv.de/de/person/alexander-hohlfeld">Alexander Hohlfeld</a></em></p>
 
+<p>In our blog post <a href="https://tiktok-audit.com/blog/2023/tiktok_political_ads/">Diving into TikTok’s Ad Library: Surfacing with Missing Data and Unenforced Guidelines</a> we found, that contrary to <a href="https://www.tiktok.com/creators/creator-portal/en-us/community-guidelines-and-safety/tiktoks-stance-on-political-ads/">TikTok´s guidelines</a> political advertising exists on the platform. Even though we argued that a systematic analysis is currently not possible, due to a lack of information provided by the ad library, we took a closer look at it and developed methods to assess the prevalence more in-depth. We matched names of politicians and political parties with the names of accounts that posted ads or those who paid for an ad.</p>
 
+<p>But this is a very limited analysis and therefore our general criticism persists: TikTok needs to provide more features and data for the ad library to serve it’s purpose. For example, the videos are missing textual descriptions like hashtags the users would see. TikTok could also provide subtitles, that would allow researchers to automatically analyse what is said.</p>
 
+<p>In the meantime, our limited approach offers a glimpse at the prevalence of political ads in specific contexts. But there is a major limitation: comparing politicians names with the available data only brings up those ads that are provided or paid for directly by political parties and candidates themselves. It is possible that political ads that are provided by third parties (e.g., lobby groups) could be even more prevalent, as they could be used to intentionally circumvent TikToks ban as well als political regulation on political ads.</p>
 
-    <div
-  class="jupyter-notebook"
-  style="position: relative; width: 100%; margin: 0 auto;">
-  <div class="jupyter-notebook-iframe-container">
-    <iframe
-      src="/blog/assets/jupyter/test.ipynb.html"
-      style="position: absolute; top: 0; left: 0; border-style: none;"
-      width="100%"
-      height="100%"
-      onload="this.parentElement.style.paddingBottom = (this.contentWindow.document.documentElement.scrollHeight + 10) + 'px'"></iframe>
-  </div>
-</div>
+<p>Our analysis is based on the data of over <strong>7.5 million advertisements that included Germany as a target country over the period from 01.10.2022 to 31.08.2023</strong>.</p>
 
+<p>As described above we queried our dataset with the names of politicians. We compiled a list of names of 1.) members of the the German parliament (MdBs), 2.) members of the German federal parliaments (MdLs) as well as 3.) all members of the European parliament (MEPs), searching for the personal names in the usernames and the ad sponsors. Additionally, we also looked for the party names in those data fields.</p>
 
+<p>In total, we found 105 ads.</p>
 
-<p>Note that the jupyter notebook supports both light and dark themes.</p>]]></content><author><name></name></author><category term="how-to" /><category term="notebook" /><category term="code" /><summary type="html"><![CDATA[sample SNV jupyter notebook]]></summary></entry><entry><title type="html">documenting your data</title><link href="http://localhost:4000/blog/blog/2023/documenting-your-data/" rel="alternate" type="text/html" title="documenting your data" /><published>2023-08-01T17:09:00+02:00</published><updated>2023-08-01T17:09:00+02:00</updated><id>http://localhost:4000/blog/blog/2023/documenting-your-data</id><content type="html" xml:base="http://localhost:4000/blog/blog/2023/documenting-your-data/"><![CDATA[<p><strong>Documenting your data</strong></p>
+<figure>
 
-<p>So you’ve set up some scrapers to gather data from the platform you are auditing and are now swimming in it. But what exactly are you gathering?</p>
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2023-09_tt_political_ads_by_accounts-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2023-09_tt_political_ads_by_accounts-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2023-09_tt_political_ads_by_accounts-1400.webp" />
+    
 
-<p>In this notebook, we explore a strategy to create a codebok template to make the process of documenting your data easier. We assume you have been a Mongo database witha collection that stores JSON documents.</p>
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2023-09_tt_political_ads_by_accounts.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
 
-<p>We will be using <a href="https://github.com/wolverdude/genson/"><code class="language-plaintext highlighter-rouge">GenSON</code></a>, a “powerful, user-friendly JSON Schema generator built in Python”. Read the library’s documentation for more information.</p>
+</figure>
 
-<p><strong>The problem</strong></p>
+<p>While the SPD posted the most ads in total, the majority is related to one campaign. If we look at the number of different accounts that used ads we can see that members of the AfD made the most attempts of posting political ads:</p>
 
-<p>You want to document your data. In the ideal scenario, all documets are composed of the same variables and only vary in content. However, you have documents of varying sizes and contents. Which document should you use as prototype to create your code book? The largest is a natural guess, but some smaller document may contain variables not present in the largest one.</p>
+<figure>
 
-<p>Enter <code class="language-plaintext highlighter-rouge">GenSON</code>.</p>
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2023-09_tt_political_ads_by_party-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2023-09_tt_political_ads_by_party-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2023-09_tt_political_ads_by_party-1400.webp" />
+    
 
-<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">builder</span> <span class="o">=</span> <span class="nc">SchemaBuilder</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">:</span>
-    <span class="n">document</span> <span class="o">=</span> <span class="n">json_util</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
-    <span class="n">document</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
-    <span class="n">builder</span><span class="p">.</span><span class="nf">add_object</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
-<span class="n">schema</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="nf">to_schema</span><span class="p">()</span>
-</code></pre></div></div>
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2023-09_tt_political_ads_by_party.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
 
-<p><strong>To be continued…</strong></p>]]></content><author><name></name></author><category term="how-to" /><category term="code" /><summary type="html"><![CDATA[an example of a blog post with some code]]></summary></entry></feed>
+</figure>
+
+<p>While most ads were not targeted at a specific audience, we also found that some political ads include particular targeting criteria. This is relevant to the current debate as microtargeting in political advertising has been scrutinised for a while and is part of an <a href="https://oeil.secure.europarl.europa.eu/oeil/popups/ficheprocedure.do?reference=2021/0381(COD)&amp;l=en">ongoing debate in the European Union</a>, with the European Data Protection Supervisor <a href="http://arguing/%20for%20tighter/">arguing for tighter</a> regulations. Specifically, we found, for example, that “News &amp; Information” was the main interest category targeted by political ads. Still, we also found ads targeting specific topics like the Bavarian FDP politician whose <a href="https://library.tiktok.com/ads/detail/?ad_id=1765779799994426">talk show monologue on early childhood education</a> was shown as an ad to 3000 German users interested in “Kids &amp; Maternity”; or AFD’s Frank Rinck <a href="https://library.tiktok.com/ads/detail/?ad_id=1755552014103605">4-minute ad of a speech in the Bundestag arguing for agricultural self-sufficiency</a> was shown to about 5000 users interested in “Appliances, Vehicles &amp; Transportation, Tech &amp; Electronics”.</p>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2023-09_tt_political_ads_by_targeting-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2023-09_tt_political_ads_by_targeting-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2023-09_tt_political_ads_by_targeting-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2023-09_tt_political_ads_by_targeting.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+</figure>
+
+<p>The whole set of political ads we found in the TikTok ad-library can be <a href="/assets/data/2023-09_political_ads.csv">downloaded as csv</a>.</p>]]></content><author><name></name></author><category term="ad-libary" /><category term="ads," /><category term="analysis," /><category term="political-ads" /><summary type="html"><![CDATA[An update on political ads in Germany + Dataset]]></summary></entry><entry><title type="html">🔞 Ad-Targeting for minors still exists but it shouldn’t</title><link href="http://localhost:4000/blog/2023/ads-targeting-minors/" rel="alternate" type="text/html" title="🔞 Ad-Targeting for minors still exists but it shouldn’t" /><published>2023-08-28T20:00:00+02:00</published><updated>2023-08-28T20:00:00+02:00</updated><id>http://localhost:4000/blog/2023/ads-targeting-minors</id><content type="html" xml:base="http://localhost:4000/blog/2023/ads-targeting-minors/"><![CDATA[<p><em>By: <a href="https://www.stiftung-nv.de/de/person/dr-martin-degeling">Martin Degeling</a> &amp; <a href="https://www.stiftung-nv.de/de/person/anna-semenova">Anna Semenova</a></em></p>
+
+<p>Owner: Martin</p>
+
+<p>On June 28th, TikTok <a href="https://www.tiktok.com/business/en/blog/privacy-updates-improved-data-control-transparency-tools">announced</a> that “Starting today […] people in the United States aged 13 to 15 will no longer see personalized ads on TikTok based on their activities off TikTok. From Tuesday, July 11, people in the European Economic Area, United Kingdom, and Switzerland aged 13 to 17 will no longer see personalized ads on TikTok based on their activities on or off TikTok”.</p>
+
+<p>The changes in the EEA are related to the Digital Services Act coming into force - Article 28 (2) on “Online protection of minors” prohibits profiled advertisements for minors.</p>
+
+<p>Now that TikTok has made its ads library publicly available, we wanted to test whether TikTok actually followed through on these announcements. And they do not. There are still ads targeted specifically to minors, and there is no barrier for advertisers to place these ads.</p>
+
+<p>Here is how we come to that conclusion:</p>
+
+<p>More than 7.000.000 ads in the ad library have been targeted at a German audience since October 2022. Most ads are not targeted at any specific age group, which means all age groups except 13-17 are listed. But over 3000 have been targeted only at minors (ages 13-17). And out of those, only 22 have been removed.</p>
+
+<p>This is not surprising, in general. TikTok only announced an ending to this practice in July. Therefore, we expected to see a drop in the number of ads targeted at minors after July 11th. But this is not the case. The following histogram shows the number of ads targeted at minors per day over the whole time span. There is no indication that targeting minors has stopped or even declined since July 11th.</p>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/tt_adtargeting_minors_histogram.svg-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/tt_adtargeting_minors_histogram.svg-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/tt_adtargeting_minors_histogram.svg-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/tt_adtargeting_minors_histogram.svg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+</figure>
+
+<p><em>Histogram of the number of ads targeting only users 13-17 years old</em></p>
+
+<p>While targeting only minors is not super common in Germany, the fact that it is still happening, although TikTok claimed to have disabled it, is surprising. See, for example, this <a href="https://library.tiktok.com/ads/detail/?ad_id=1773031834457089">Warner Brothers ad</a> for the movie Meg2. It is targeted at male users between 13-17 and the “audience” feature is set to “yes”. Enabling this feature means that ads are “<strong>based on the users’ on and off-TikTok activity as specified by the advertiser.”</strong> Activity-based targeting is explicitly mentioned in the TikTok press release as being deactivated by July 11th.</p>
+
+<p>Out of curiosity, we wanted to see what changes TikTok had implemented to prevent this type of targeting on the platform. We used a business TikTok account to get quotes for promoting a video.</p>
+
+<p>The screenshot below shows that TikTok implemented at least some kind of measure. When selecting 13-17 as your audience, the interface says <em>“Metrics cannot be displayed due to data security requirements for minors”.</em></p>
+
+<div class="row justify-content-sm-center"><div class="col-sm-4 mt-3 mt-md-0">
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/tt_targeting_13-17_estimate-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/tt_targeting_13-17_estimate-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/tt_targeting_13-17_estimate-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/tt_targeting_13-17_estimate.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+</figure>
+
+</div></div>
+<p><em>Screenshot from the TikTok App not-showing estimates for the audience size for 13-17 yo</em></p>
+
+<p>However, this limited data disclosure has only been implemented for the estimated audience. After specifying the targeting criteria for an ad, we are asked to specify the budget and duration of the ad placement. In that process (as seen in the screenshot below) TikTok discloses our ads’ “Estimated video views”. While TikTok does not disclose the exact audience size of 13-17-year-olds in Germany who are interested in Education, we now see a lower bound for the same target group and learn that about 266.519 to 709.520 users in that audience are expected to be online within a day.</p>
+
+<div class="row justify-content-sm-center"><div class="col-sm-4 mt-3 mt-md-0">
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/tt_targeting_13-17_education_estimate-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/tt_targeting_13-17_education_estimate-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/tt_targeting_13-17_education_estimate-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/tt_targeting_13-17_education_estimate.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+</figure>
+
+</div></div>
+<p><em>Screenshot from the TikTok App showing estimated views from the target group</em></p>
+
+<p>The fact that targeting minors with ads targeting not only their age, but also gender and interests, which TikTok infers from user behaviour, is not only in violation with TikTok’s own announcement but also the Digital Services Act that prohibits this type of advertising.</p>
+
+<p>PS: Here is a list of the advertisers that target minors most often:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warner Bros. Entertainment GmbH                          283
+Non-trivial                                               93
+eBay Kleinanzeigen GmbH                                   63
+Bayerischer Jugendring                                    62
+Scoolio GmbH                                              60
+GHIS School                                               59
+www.bpods.de                                              53
+ethno IQ GmbH                                             52
+EF Educational Foundation for Foreign Study AG            45
+Ministerium der Justiz des Landes Nordrhein-Westfalen     45
+FRØSLEV AFTERSCHOOL                                       39
+LEONINE Distribution GmbH                                 36
+Handelsverband Deutschland - HDE e.V.                     35
+Pikoya Ltd.                                               34
+HuLab GmbH                                                31
+Scopely, Inc.                                             30
+epods1                                                    29
+neo venture GmbH                                          29
+lukas.pain                                                28
+Party Club Berlin Freizeitkultugestaltung e.V.            28
+</code></pre></div></div>]]></content><author><name></name></author><category term="ad-libary" /><category term="ads," /><category term="analysis" /><summary type="html"><![CDATA[An data analysis of ads targeting minors on a set of 7.000.000 ads shows that, altough TikTok claimed it ended the practice, still exists]]></summary></entry><entry><title type="html">Diving into TikTok’s Ad Library: Surfacing with Missing Data and Unenforced Guidelines</title><link href="http://localhost:4000/blog/2023/tiktok_political_ads/" rel="alternate" type="text/html" title="Diving into TikTok’s Ad Library: Surfacing with Missing Data and Unenforced Guidelines" /><published>2023-08-18T11:20:00+02:00</published><updated>2023-08-18T11:20:00+02:00</updated><id>http://localhost:4000/blog/2023/tiktok_political_ads</id><content type="html" xml:base="http://localhost:4000/blog/2023/tiktok_political_ads/"><![CDATA[<p><em>By: <a href="https://www.stiftung-nv.de/de/person/alexander-hohlfeld">Alexander Hohlfeld</a></em></p>
+
+<p>In April 2020 TikTok announced their new “<a href="https://newsroom.tiktok.com/de-de/richtlinien-fur-werbeanzeigen-auf-tiktok">Guidelines for advertisements on TikTok</a>”, which explicitly forbid political advertisements on the platform. TikTok claimed that they “will not allow paid ads that explicitly promote or oppose political candidates, officeholders, political parties, or groups or issues at the federal, state, or local levels”. An <a href="https://foundation.mozilla.org/en/campaigns/tiktok-political-ads/">investigation</a> by Mozilla in 2021 already had shown that the political ad policies can easily be circumvented with influencer marketing. Therefore, TikTok <a href="https://newsroom.tiktok.com/de-de/aktualisierung-der-richtlinien-fuer-politische-accounts">updated</a> these guidelines and introduced a “comprehensive monetization block for political accounts”.</p>
+
+<p>Until recently it wasn’t possible to systematically prove whether and how strongly TikTok enforced all these guidelines. With the Digital Services Act (DSA) putting more pressure on transparency efforts of “Very Large Online Platforms” (VLOPs), TikTok introduced their “<a href="https://newsroom.tiktok.com/en-eu/expanding-tiktoks-research-api-and-commercial-content-library">Commercial Content Library</a>” in July 2023.</p>
+
+<p>In the corresponding <a href="https://library.tiktok.com/faq">FAQ</a> they point out, that “TikTok does not show political or election ads on the platform. <strong>So you will not be able to find ads of political nature in the Commercial Content Library</strong>”. But surprisingly, it is not complicated at all to find such ads. Even though the library lacks important information, the way how easy it is to find political advertising raises questions on how seriously TikTok enforces these guidelines. A simple <a href="https://twitter.com/favstats/status/1681991000623816705">search for the abbreviations</a> of German political parties already shows numerous examples of ads placed by politicians or parties as well as a seemingly endless number of political ads by other people. Especially politicians of the “AfD” seem to use ads on TikTok systematically to reach out to potential voters. We found examples of accounts from members of the German parliament (MdBs) and members from the federal parliaments (MdLs). Besides that, we found even more political ads promoting the AfD, that are not associated with an official account of a member of the party. Even though other parties don’t seem to use TikTok ads to a similar extent, we also found examples of accounts of city and local chapters of political parties advertising political content.</p>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/tt_adlib_afd-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/tt_adlib_afd-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/tt_adlib_afd-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/tt_adlib_afd.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+</figure>
+
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/tt_adlib_spd_ffm-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/tt_adlib_spd_ffm-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/tt_adlib_spd_ffm-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/tt_adlib_spd_ffm.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+  </picture>
+
+</figure>
+
+<p><em>Screenshots from the search results for different political parties</em></p>
+
+<p>There are many indications that the German context is no coincidence and the political ad policies are not strongly enforced in other contexts as well. Journalists of the <a href="https://www.forbes.com/sites/iainmartin/2023/07/26/tiktok-chinese-propaganda-ads-europe/">Forbes</a> magazine revealed even that “TikTok has pushed Chinese propaganda ads to millions across Europe”.</p>
+
+<p>The TikTok ad library can be seen as a starting point, enforcing transparency and data access obligations under the DSA. For a more systematic analysis the library lacks important information. TikTok also deleted some ads due to violations of their terms of service (“You can’t view this ad because it was removed from the platform due to a violation of TikTok’s terms.”). While it is possible to get the information that a specific ad was removed, neither the ad itself nor any information about the advertiser is shown on the library, making it impossible to draw any conclusions from it.</p>
+
+<p>Auditing the specific flaws or bias of TikTok´s advertising system would require that information and also more detailed search options than just the search for advertiser name and keyword. The descriptions of ads are also not disclosed in TikTok’s ad library, making it very difficult to find the exact product or service the ad is referring to.</p>
+
+<p>Nevertheless, it was very easy to find anecdotal evidence from TikTok´s ad library, to show that there is a lack of enforcement on the political advertising guidelines. A systematic analysis is currently not possible due to lack of information provided by the library. We hope, that TikTok adjusts the functionality and provides more information, so that researchers can use the ad library to conduct systematic research.</p>]]></content><author><name></name></author><category term="ad-library" /><category term="ads," /><category term="analysis," /><category term="political-ads" /><summary type="html"><![CDATA[A short analysis of political ads and TikToks new advertisement library]]></summary></entry></feed>
