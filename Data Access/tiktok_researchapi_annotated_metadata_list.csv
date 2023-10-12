@@ -1,5 +1,4 @@
 property,description
-variable,description
 video.id,"Unique identifier for the TikTok video. Also called ""item_id"" or ""video_id"""
 video.create_time,UTC Unix epoch (in seconds) of when the TikTok video was posted. (Inherited field from TNS research API)
 video.username,The video's author's username
