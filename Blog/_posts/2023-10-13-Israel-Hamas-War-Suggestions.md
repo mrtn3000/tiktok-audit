@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "🪖 How TikTok drags users into the digital war zone"
-date: 2023-09-25 10:00:00
+date: 2023-10-13 10:00:00
 description: An analysis of the suggested searches related to the Israel-Hamas War
 tags: suggested search, war
 categories: suggested search
