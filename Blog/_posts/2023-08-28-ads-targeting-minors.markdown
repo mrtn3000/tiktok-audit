@@ -5,7 +5,7 @@ date: 2023-08-28 18:00:00
 description: An data analysis of ads targeting minors on a set of 7.000.000 ads shows that, altough TikTok claimed it ended the practice, still exists
 tags: ads, analysis
 categories: ad-libary
-featured: true
+featured: false
 related_posts: false
 ---
 *By: [Martin Degeling](https://www.stiftung-nv.de/de/person/dr-martin-degeling) & [Anna Semenova](https://www.stiftung-nv.de/de/person/anna-semenova)*

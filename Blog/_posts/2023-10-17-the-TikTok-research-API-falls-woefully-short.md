@@ -17,7 +17,7 @@ One way TikTok provides access to some of its data is the Research API. It makes
 <div class="row justify-content-sm-center"><div class="col-sm-8 mt-4 mt-md-0">
 {% include figure.html path="/assets/img/2023-10_tt-apis.png" class="img-fluid rounded z-depth-1" zoomable=true %} 
 </div></div>
-**Image: The number of variables available on TikTok through different means of data acccess.**
+*Image: The number of variables available on TikTok through different means of data acccess.*
 
 ## TikTok's Research API
 
@@ -40,7 +40,7 @@ These variables contain information about different aspects of the objects in qu
 5. **Text:** This is the actual text of the comment entered on a video. To protect the privacy of users, other information is removed.
 6. **Video_ID:** This is the video ID for which the comment was entered.
 
-The API's [offici](https://developers.tiktok.com/doc/research-api-codebook)al codebook provides a detailed description of all available variables. While these may shed light on *some* research questions, especially related to the analysis of content posted on the platform, they are extremely limited in number and scope.
+The API's [official](https://developers.tiktok.com/doc/research-api-codebook) codebook provides a detailed description of all available variables. While these may shed light on *some* research questions, especially related to the analysis of content posted on the platform, they are extremely limited in number and scope.
 
 ## Getting more useful data is hard
 
