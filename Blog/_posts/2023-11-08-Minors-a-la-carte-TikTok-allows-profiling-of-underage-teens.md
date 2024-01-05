@@ -4,7 +4,7 @@ title: "🍽️ Minors à la carte: TikTok allows profiling of underage teens "
 date: 2023-11-07 10:00:00
 description: We look into the Research API and its shortcomings.
 tags: ads, analysis
-categories: ad-libary
+categories: ad-library
 featured: true
 related_posts: true
 ---

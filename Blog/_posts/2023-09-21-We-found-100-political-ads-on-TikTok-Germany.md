@@ -4,7 +4,7 @@ title: "🔭 We found 100 political ads on TikTok Germany"
 date: 2023-09-25 10:00:00
 description: An update on political ads in Germany + Dataset
 tags: ads, analysis, political-ads
-categories: ad-libary
+categories: ad-library
 featured: true
 related_posts: true
 ---
