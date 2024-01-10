@@ -2,7 +2,7 @@
 layout: page
 permalink: /code/
 title: code
-description: In this repository you'll find some of the code we've developed to look into TikTok.
+description: In these repository you'll find some of the code we've developed to look into TikTok. We can't publish everything to not risk our analysis, but if you are interested in learning more, please get in contact.
 nav: true
 nav_order: 3
 ---

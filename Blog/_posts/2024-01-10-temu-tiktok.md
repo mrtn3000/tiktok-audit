@@ -9,6 +9,9 @@ featured: true
 related_posts: true
 ---
 
+<div class="row justify-content-sm-center"><div class="col-sm-6 mt-6 mt-md-6">
+{% include figure.html path="/assets/img/2024-01_tt-temu.png" class="img-fluid rounded z-depth-1" zoomable=true width="100%" alt="generated with DALL·E 3" %} 
+</div></div>
 
 *By [Alexander Hohlfeld](https://www.stiftung-nv.de/en/person/alexander-hohlfeld) and [Kathy Meßmer](https://www.stiftung-nv.de/en/person/dr-anna-katharina-messmer)*
 
@@ -71,3 +74,4 @@ Although Temu (hidden under “more details”) points out that, "[u]nauthorized
 - “Temu Free Gift is a daily bonus game that rewards users with free coins and prizes just for logging in.”
 
 While constantly pushing the user to new price wheels for allegedly “free products”, encouraging users to share codes and links as well as strong gamification efforts, the combination of Temu with social media platforms like TikTok might cause consumer protection harms that need further investigation. We are currently investigating these harms, that result from the exploitation of TikTok´s affordances by e-commerce platforms like Temu or “fast fashion” apps like “Shein”. Follow our blog to not miss our next articles.
+
