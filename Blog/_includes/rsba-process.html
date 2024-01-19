@@ -1,0 +1,1552 @@
+<style>
+    /* Temporary styles for development */
+
+@font-face {
+    font-family: 'Akkurat-Regular';
+    src: url('/assets/fonts/AkkuratStd-Regular.woff2') format('woff2'),
+        url('/assets/fonts/AkkuratStd-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akkurat-Regular';
+    src: url('fonts/AkkuratStd-Bold.woff2') format('woff2'),
+        url('fonts/AkkuratStd-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font-family: 'Akkurat-Regular', Helvetica, Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 690px;
+    margin: 0 auto;
+}
+
+#snv-graphic-container {
+    width: 100%;
+    font-family: 'Akkurat-Regular', Helvetica, Arial, sans-serif;
+    min-height: 500px;
+    position: relative;
+}
+
+/* Definitive styles for realisation */
+
+/* Variables */
+:root {
+    --snv-graphic-orange: #ff8c14;
+    --snv-graphic-orange-light: #fae1a5;
+    --snv-graphic-pink: #f02878;
+    --snv-graphic-pink-light: #ef78ae;
+    --snv-graphic-blue: #b914ff;
+    --snv-graphic-blue-light: #d197ff;
+    --snv-graphic-yellow: #ffc850;
+    --snv-graphic-yellow-light: #fff6a6;
+    --snv-graphic-green: #00c43c;
+    --snv-graphic-grey: #6e7682;
+}
+
+/* Buttons */
+.snv-graphic-btn > button {
+    background-color: white;
+}
+
+.snv-graphic-btn > button:hover,
+.snv-graphic-submenu > button:hover{
+    cursor: pointer;
+}
+
+.snv-graphic-btn-orange-light > button {
+    border: 1px solid var(--snv-graphic-orange-light);
+}
+
+.snv-graphic-btn-pink-light > button {
+    border: 1px solid var(--snv-graphic-pink-light);
+}
+
+.snv-graphic-btn-blue-light > button{
+    border: 1px solid var(--snv-graphic-blue-light);
+}
+
+.snv-graphic-btn-yellow-light > button {
+    border: 1px solid var(--snv-graphic-yellow-light);
+}
+
+.snv-graphic-btn-orange > button {
+    border: 1px solid var(--snv-graphic-orange);
+}
+
+.snv-graphic-btn-pink > button {
+    border: 1px solid var(--snv-graphic-pink);
+}
+
+.snv-graphic-btn-blue > button {
+    border: 1px solid var(--snv-graphic-blue);
+}
+
+.snv-graphic-btn-yellow > button {
+    border: 1px solid var(--snv-graphic-yellow);
+}
+
+.snv-graphic-btn-orange-light:hover > button,
+.snv-graphic-btn-orange-light .btn-active  {
+    background-color: var(--snv-graphic-orange-light);
+}
+
+.snv-graphic-btn-pink-light:hover > button,
+.snv-graphic-btn-pink-light .btn-active  {
+    background-color: var(--snv-graphic-pink-light);
+}
+
+
+.snv-graphic-btn-blue-light:hover > button,
+.snv-graphic-btn-blue-light .btn-active  {
+    background-color: var(--snv-graphic-blue-light);
+}
+
+.snv-graphic-btn-yellow-light:hover > button,
+.snv-graphic-btn-yellow-light .btn-active  {
+    background-color: var(--snv-graphic-yellow-light);
+}
+
+
+.snv-graphic-icon-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.snv-graphic-icon-btn > svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Select */
+#snv-graphic-container select,
+#snv-graphic-container button {
+    font-family: 'Akkurat-Regular', Helvetica, Arial, sans-serif;
+}
+
+#snv-graphic-container select:focus {
+    outline: none;
+}
+
+/* Header */
+#snv-graphic-header {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+}
+
+#snv-graphic-header > .snv-graphic-button-wrapper {
+    width: calc( (100% - 16px) / 2 );
+}
+
+#snv-graphic-header button {
+    font-family: 'Akkurat-Regular', Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#snv-graphic-main button {
+    font-family: 'Akkurat-Regular', Helvetica, Arial, sans-serif;
+}
+
+.header-max button {
+    height: 60px;
+    font-size: 20px;
+    transition: 0.4s ease;
+}
+
+.header-min button {
+    height: 40px;
+    font-size: 14px;
+    transition: 0.4s ease;
+}
+
+.header-max {
+    top: 50%;
+    transform: translateY(-40%);
+}
+
+.header-min {
+    top: 0;
+    transform: normal;
+    transition: 0.4s ease;
+}
+
+.snv-graphic-button-info {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0;
+    transition: 0.2s ease;
+    padding-top: 16px;
+    display: none;
+}
+
+.header-max > .snv-graphic-button-wrapper:hover .snv-graphic-button-info {
+    opacity: 1;
+    transition: 0.2s ease;
+}
+
+.header-min .snv-graphic-button-info {
+    display: none;
+}
+
+/* Start item */
+.snv-graphic-start-item {
+    background-color: white;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px dashed var(--snv-graphic-orange-light); 
+    position: absolute;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.snv-graphic-start-item:hover {
+    background-color: var(--snv-graphic-orange-light);
+    transition: 0.4s ease;
+}
+
+.snv-graphic-start-item .snv-graphic-arrow {
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.snv-graphic-start-item:hover .snv-graphic-arrow {
+    opacity: 1;
+    transition: 0.4s ease;
+}
+
+.item-top {
+    top: 0;
+}
+
+.item-bottom {
+    bottom: 0;
+}
+
+.snv-graphic-arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
+    width: 1px;
+    background-color: black;
+}
+
+.arrow-down {
+    top: 70px;
+}
+
+.snv-graphic-arrow span {
+    border-top: 10px solid black;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.arrow-up {
+    bottom: 70px;
+}
+
+/* Main */
+#snv-graphic-main {
+    width: 100%;
+    padding-top: 96px;
+}
+
+.main-hide {
+    transform: translateY(300px);
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.main-show {
+    transform: normal;
+    opacity: 1;
+    transition: 0.4s ease;
+}
+
+.snv-graphic-layer {
+    width: 100%;
+    padding-top: 16px;
+}
+
+.snv-graphic-sidebar {
+    width: 100%;
+}
+
+.snv-graphic-sidebar p,
+.snv-graphic-sidebar a {
+    margin-top: 0px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.layer-hide {
+    display: none;
+}
+
+.layer-show {
+    display: block;
+}
+
+.snv-graphic-main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 32px;
+}
+
+.snv-graphic-layer select {
+    width: 100%;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.snv-graphic-layer select > option {
+    background-color: white;
+}
+
+#snv-graphic-plan select {
+    border: 1px solid var(--snv-graphic-orange-light);
+}
+
+#snv-graphic-scenarios select {
+    border: 1px solid var(--snv-graphic-pink-light);
+}
+
+#snv-graphic-measure select {
+    border: 1px solid var(--snv-graphic-blue-light);
+}
+
+#snv-graphic-measure select.measure-audit {
+    border: 1px solid var(--snv-graphic-blue);
+}
+
+#snv-graphic-measure select.measure-element {
+    border: 1px solid var(--snv-graphic-orange);
+}
+
+#snv-graphic-evaluate select {
+    border: 1px solid var(--snv-graphic-yellow-light);
+}
+
+#snv-graphic-plan select:hover,
+#snv-graphic-measure select.measure-element:hover {
+    background-color: var(--snv-graphic-orange-light);
+}
+
+#snv-graphic-scenarios select:hover {
+    background-color: var(--snv-graphic-pink-light);
+}
+
+#snv-graphic-measure select:hover,
+#snv-graphic-measure select.measure-audit:hover {
+    background-color: var(--snv-graphic-blue-light);
+}
+
+#snv-graphic-evaluate select:hover {
+    background-color: var(--snv-graphic-yellow-light);
+}
+
+.snv-graphic-content {
+    width: 100%;
+}
+
+/* Graphic elements */
+.snv-graphic-element-btn {
+    fill: white;
+}
+
+.snv-graphic-element-text {
+    opacity: 0;
+    transition: 0.2s ease;
+}
+
+.snv-graphic-element:hover .snv-graphic-element-text {
+    opacity: 1;
+    transition: 0.2s ease;
+}
+
+.snv-graphic-element-orange {
+    stroke: var(--snv-graphic-orange);
+    fill: white;
+}
+
+.snv-graphic-element:hover .snv-graphic-element-orange,
+.snv-graphic-element-orange:hover {
+    fill: var(--snv-graphic-orange-light);
+}
+
+.snv-graphic-element-pink {
+    stroke: var(--snv-graphic-pink);
+    fill: white;
+}
+
+.snv-graphic-element:hover .snv-graphic-element-pink,
+.snv-graphic-element-pink:hover {
+    fill: var(--snv-graphic-pink-light);
+}
+
+.snv-graphic-element-blue {
+    stroke: var(--snv-graphic-blue);
+    fill: white;
+}
+
+.snv-graphic-element:hover .snv-graphic-element-blue,
+.snv-graphic-element-blue:hover {
+    fill: var(--snv-graphic-blue-light);
+}
+
+.snv-graphic-element-yellow {
+    stroke: var(--snv-graphic-yellow);
+    fill: white;
+}
+
+.snv-graphic-element:hover .snv-graphic-element-yellow,
+.snv-graphic-element-yellow:hover {
+    fill: var(--snv-graphic-yellow-light);
+}
+
+#snv-graphic-scenarios-define #scenarios-define-01 {
+    opacity: 1;
+    transition: 0.4s ease;
+} 
+
+#snv-graphic-scenarios-define #scenarios-define-02 {
+    opacity: 0;
+    transition: 0.4s ease;
+} 
+
+#snv-graphic-scenarios-define:hover #scenarios-define-02 {
+    opacity: 1;
+    transition: 0.4s ease;
+} 
+
+#snv-graphic-scenarios-define:hover #scenarios-define-01 {
+    opacity: 0;
+    transition: 0.4s ease;
+} 
+
+.snv-graphic-measure-prioritize-text,
+.snv-graphic-measure-prioritize-element {
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.snv-graphic-measure-prioritize-container:hover .snv-graphic-measure-prioritize-text,
+.snv-graphic-measure-prioritize-container:hover .snv-graphic-measure-prioritize-element {
+    opacity: 1;
+    transition: 0.4s ease;
+}
+
+.snv-graphic-measure-prioritize-container:hover .snv-graphic-element-pink {
+    fill: var(--snv-graphic-pink-light);
+}
+
+.snv-graphic-measure-prioritize-container:hover .snv-graphic-element-yellow {
+    fill: var(--snv-graphic-yellow-light);
+}
+
+#snv-graphic-measure-audits {
+    width: 100%;
+}
+
+#snv-graphic-measure-audits-header > p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#snv-graphic-measure-audits-body > p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+#snv-graphic-measure-audits-header,
+#snv-graphic-measure-audits-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#snv-graphic-measure-audits-header > select,
+#snv-graphic-measure-audits-body .snv-graphic-measure-button {
+    width: 200px;
+    height: 40px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.snv-graphic-measure-element {
+    margin-bottom: 8px;
+}
+
+.snv-graphic-measure-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.measure-audit {
+    border: 1px solid var(--snv-graphic-blue);
+}
+
+.measure-audit:hover {
+    background-color: var(--snv-graphic-blue-light);
+}
+
+.measure-element {
+    border: 1px solid var(--snv-graphic-orange);
+}
+
+.measure-element:hover {
+    background-color: var(--snv-graphic-orange-light);
+}
+
+.snv-graphic-measure-text {
+    width: 176px;
+    padding: 8px;
+    border: 1px solid black;
+    opacity: 0;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 12px;
+    transition: 0.4s ease;
+    position: absolute;
+    bottom: 0;
+}
+
+.snv-graphic-measure-element:hover > .snv-graphic-measure-text {
+    opacity: 1;
+    transition: 0.4s ease;
+}
+
+/* Submenu */
+.snv-submenu-button {
+    border-radius: 5px;
+    height: 28px;
+    width: calc( (100% - 16px) / 2 );
+}
+
+.snv-graphic-submenu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+#snv-graphic-plan .snv-submenu-button {
+    background-color: white;
+    border: 1px solid var(--snv-graphic-orange-light);
+}
+
+#snv-graphic-plan .snv-submenu-button:hover,
+#snv-graphic-plan .btn-active {
+    background-color: var(--snv-graphic-orange-light);
+}
+
+#snv-graphic-scenarios .snv-submenu-button {
+    background-color: white;
+    border: 1px solid var(--snv-graphic-pink-light);
+}
+
+#snv-graphic-scenarios .snv-submenu-button:hover,
+#snv-graphic-scenarios .btn-active {
+    background-color: var(--snv-graphic-pink-light);
+}
+
+#snv-graphic-measure .snv-submenu-button {
+    background-color: white;
+    border: 1px solid var(--snv-graphic-blue-light);
+}
+
+#snv-graphic-measure .snv-submenu-button:hover,
+#snv-graphic-measure .btn-active {
+    background-color: var(--snv-graphic-blue-light);
+}
+
+#snv-graphic-evaluate .snv-submenu-button {
+    background-color: white;
+    border: 1px solid var(--snv-graphic-yellow-light);
+}
+
+#snv-graphic-evaluate .snv-submenu-button:hover,
+#snv-graphic-evaluate .btn-active {
+    background-color: var(--snv-graphic-yellow-light);
+}
+
+/* SVG classes */
+.st0{fill:none;}
+.st1{fill:none;stroke:#FAE1A5;stroke-miterlimit:10;}
+.st2{fill:none;stroke:#000000;stroke-linecap:round;stroke-miterlimit:10;}
+.st3{font-size:18px;}
+.st4{font-size:14px;}
+.st5{fill:#1E2124;}
+.st6{font-size:12px;}
+.st7{fill:#FF8C14;}
+.st8{fill:#B914FF;}
+.st9{fill:#F02878;}
+.st10{fill:#6E7682;}
+.st11{fill:#00C43C;}
+.st12{fill:#FFFFFF;}
+.st13{fill:#FAE1A5;}
+.st14{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+.st15{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:16.6667;}
+.st16{font-size:10px;}
+.st17{fill:#B914FF;stroke:#B914FF;stroke-miterlimit:10;}
+.st18{fill:#EFC5DC;}
+.st19{fill:#F9F1CA;}
+.st20{fill:none;stroke:#1E2124;stroke-width:0.5;stroke-miterlimit:10;}
+.st21{fill:none;stroke:#F02878;stroke-miterlimit:10;}
+.st22{fill:none;stroke:#FFC850;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:16.6667;}
+.st23{fill:#1E2124;}
+.st24{fill:none;stroke:#1E2124;stroke-width:1.5;stroke-miterlimit:10;}
+.st25{fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:16.6667;}
+.st26{fill:none;stroke:#FAE1A5;stroke-linecap:round;stroke-linejoin:round;}
+.st28{fill:none;stroke:#1E2124;stroke-miterlimit:10;}
+.st30{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:16.6667;}
+.st32{stroke:#1E2124;stroke-linecap:round;stroke-miterlimit:10;}
+.st34{fill:none;stroke:#000000;stroke-miterlimit:10;}
+.st35{fill:none;stroke:#000000;stroke-linecap:round;stroke-miterlimit:10;}
+
+@media screen and (min-width: 800px) {
+    #snv-graphic-main {
+        width: 100%;
+        padding-top: 40px;
+    }
+
+    .snv-submenu-button {
+        width: calc( (100% - 48px) / 4 );
+    }
+
+    .header-max button {
+        height: 100px;
+    }
+
+    .snv-graphic-button-info {
+        display: block;
+    }
+
+    .snv-graphic-main-container {
+        flex-direction: row;
+    }
+
+    .snv-graphic-sidebar {
+        width: 25%;
+    }
+
+    .snv-graphic-content {
+        width: calc(75% - 16px);
+    }
+
+    #snv-graphic-header > .snv-graphic-button-wrapper {
+        width: calc( (100% - 48px) / 4 );
+    }
+
+    .snv-graphic-layer select {
+        width: calc( (100% - 48px) / 4 );
+    }
+
+    .snv-graphic-arrow {
+        height: 100px;
+    }
+}
+</style>
+<div id="snv-graphic-container">
+<button class="snv-graphic-start-item item-top layer-show">
+    <strong>Prerequisite:</strong> Decide which platform and systemic risk to audit
+    <div class="snv-graphic-arrow arrow-down"><span></span></div>
+</button>
+<button class="snv-graphic-start-item item-bottom layer-show">
+    <strong>Result:</strong> Audit report
+    <div class="snv-graphic-arrow arrow-up"><span></span></div>
+</button>
+<div id="snv-graphic-header" class="header-max">
+    <div class="snv-graphic-button-wrapper snv-graphic-btn snv-graphic-btn-orange-light">
+        <button onclick="minimizeHeader('snv-graphic-plan', this)" class=" snv-graphic-icon-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g id="b"><path d="m19,15.25c-1.81,0-3.33,1.29-3.67,3h-6.65c-.09-.42-.25-.81-.47-1.17l8.88-8.88c.56.34,1.22.55,1.92.55,2.07,0,3.75-1.68,3.75-3.75s-1.68-3.75-3.75-3.75c-1.81,0-3.33,1.29-3.67,3h-6.65c-.35-1.71-1.86-3-3.67-3-2.07,0-3.75,1.68-3.75,3.75s1.68,3.75,3.75,3.75c1.81,0,3.33-1.29,3.67-3h6.65c.11.53.34,1.02.65,1.44L7.19,15.97c-.62-.45-1.37-.72-2.19-.72-2.07,0-3.75,1.68-3.75,3.75s1.68,3.75,3.75,3.75c1.81,0,3.33-1.29,3.67-3h6.65c.35,1.71,1.86,3,3.67,3,2.07,0,3.75-1.68,3.75-3.75s-1.68-3.75-3.75-3.75ZM5,7.25c-1.24,0-2.25-1.01-2.25-2.25s1.01-2.25,2.25-2.25,2.25,1.01,2.25,2.25-1.01,2.25-2.25,2.25Zm14-4.5c1.24,0,2.25,1.01,2.25,2.25s-1.01,2.25-2.25,2.25-2.25-1.01-2.25-2.25,1.01-2.25,2.25-2.25ZM5,21.25c-1.24,0-2.25-1.01-2.25-2.25s1.01-2.25,2.25-2.25,2.25,1.01,2.25,2.25-1.01,2.25-2.25,2.25Zm14,0c-1.24,0-2.25-1.01-2.25-2.25s1.01-2.25,2.25-2.25,2.25,1.01,2.25,2.25-1.01,2.25-2.25,2.25Z"></path></g></svg>                    <span>Plan</span>
+        </button>
+        <div class="snv-graphic-button-info">Identify stakeholders and map out the audit process</div>
+    </div>
+    <div class="snv-graphic-button-wrapper snv-graphic-btn snv-graphic-btn-pink-light">
+        <button onclick="minimizeHeader('snv-graphic-scenarios', this)" class="snv-graphic-icon-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g id="b"><path d="m20.1,8.87h-1.2c.02-.07.04-.13.04-.2v-.95c0-1.46-1.19-2.65-2.65-2.65h-1.2c.02-.07.04-.13.04-.2v-.95c0-1.46-1.19-2.65-2.65-2.65H3.9c-1.46,0-2.65,1.19-2.65,2.65v8.57c0,1.46,1.19,2.65,2.65,2.65h.95c.07,0,.14-.02.2-.04v1.2c0,1.46,1.19,2.65,2.65,2.65h.95c.07,0,.14-.02.2-.04v1.2c0,1.46,1.19,2.65,2.65,2.65h8.57c1.46,0,2.65-1.19,2.65-2.65v-8.57c0-1.46-1.19-2.65-2.65-2.65Zm-15.04-1.15v5.96c-.07-.02-.13-.04-.2-.04h-.95c-.64,0-1.15-.52-1.15-1.15V3.9c0-.64.52-1.15,1.15-1.15h8.57c.64,0,1.15.52,1.15,1.15v.95c0,.07.02.14.04.2h-5.96c-1.46,0-2.65,1.19-2.65,2.65Zm3.81,3.81v5.96c-.07-.02-.13-.04-.2-.04h-.95c-.64,0-1.15-.52-1.15-1.15V7.71c0-.64.52-1.15,1.15-1.15h8.57c.64,0,1.15.52,1.15,1.15v.95c0,.07.02.14.04.2h-5.96c-1.46,0-2.65,1.19-2.65,2.65Zm12.38,8.57c0,.64-.52,1.15-1.15,1.15h-8.57c-.64,0-1.15-.52-1.15-1.15v-8.57c0-.64.52-1.15,1.15-1.15h8.57c.64,0,1.15.52,1.15,1.15v8.57Z"></path></g></svg>                    <span>Scenarios</span>
+        </button>
+        <div class="snv-graphic-button-info">Define and prioritise risk scenarios</div>
+    </div>
+    <div class="snv-graphic-button-wrapper snv-graphic-btn snv-graphic-btn-blue-light">
+        <button onclick="minimizeHeader('snv-graphic-measure', this)" class="snv-graphic-icon-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g id="b"><g><path d="m12,1.25C6.07,1.25,1.25,6.07,1.25,12s4.82,10.75,10.75,10.75,10.75-4.82,10.75-10.75S17.93,1.25,12,1.25Zm0,20c-5.1,0-9.25-4.15-9.25-9.25S6.9,2.75,12,2.75s9.25,4.15,9.25,9.25-4.15,9.25-9.25,9.25Z"></path><path d="m15.38,5.58l-2.97,4.46c-.13-.03-.27-.04-.4-.04-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2c0-.42-.13-.81-.35-1.13l2.97-4.46c.23-.34.14-.81-.21-1.04s-.81-.14-1.04.21Z"></path></g></g></svg><span>Measure</span>
+        </button>
+        <div class="snv-graphic-button-info">Define and prioritise measurements to observe risk scenarios</div>
+    </div>
+    <div class="snv-graphic-button-wrapper snv-graphic-btn snv-graphic-btn-yellow-light">
+        <button onclick="minimizeHeader('snv-graphic-evaluate', this)" class="snv-graphic-icon-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g id="b"><path d="m22.53,21.47l-6.22-6.22c1.24-1.48,2-3.39,2-5.47,0-4.7-3.83-8.53-8.53-8.53S1.25,5.08,1.25,9.78s3.83,8.53,8.53,8.53c2.08,0,3.99-.75,5.47-2l6.22,6.22c.15.15.34.22.53.22s.38-.07.53-.22c.29-.29.29-.77,0-1.06ZM2.75,9.78c0-3.88,3.15-7.03,7.03-7.03s7.03,3.15,7.03,7.03-3.15,7.03-7.03,7.03-7.03-3.15-7.03-7.03Z"></path></g></svg>
+            <span>Evaluate</span>
+        </button>
+        <div class="snv-graphic-button-info">Analyse results and create a report</div>
+    </div>
+</div>
+<div id="snv-graphic-main" class="main-hide">
+    <div id="snv-graphic-plan" class="snv-graphic-layer layer-hide">
+        <div class="snv-graphic-submenu">
+            <button class="snv-submenu-button btn-active" onclick="showPanel('snv-graphic-plan-understand', this)">Understand platform</button>
+            <button class="snv-submenu-button" onclick="showPanel('snv-graphic-plan-define', this)">Define stakeholder</button>
+        </div>
+        <div class="snv-graphic-main-container">
+            <div class="snv-graphic-sidebar">
+                <p>
+                    Get a good <strong>understanding</strong> of the platform. Use this information to determine the profiles of <strong>stakeholders</strong> who should be involved in the process. Depending on the experience and expertise needed, stakeholders could be platform developers, researchers, legal experts and representatives of the parties affected.
+                </p>
+                <a href="https://www.stiftung-nv.de/de/publication/auditing-recommender-systems#step1-planning" target="_blank">More details</a>
+            </div>
+            <div class="snv-graphic-content">
+                <div id="snv-graphic-plan-understand" class="snv-graphic-panel layer-show">
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+                    <svg version="1.1" id="plan-understand" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 376.5" style="enable-background:new 0 0 500 376.5;" xml:space="preserve">
+                    <g style="opacity: 0.5;">
+                        <polygon class="st1" points="249.4,328.6 487.1,189.8 250.1,53 12.4,190.5    "></polygon>
+                        <polygon class="st1" points="330.2,254.1 413.9,205.2 274.6,125.9 190.9,174.2    "></polygon>
+                        <polygon class="st1" points="295.7,273.8 320.1,259.5 180.8,180.2 156.4,194  "></polygon>
+                        <polygon class="st1" points="261.1,293.6 285.5,279.3 146.2,199.9 121.8,213.7    "></polygon>
+                        <line class="st1" x1="455.8" y1="207.9" x2="218.9" y2="71.1"></line>
+                        <line class="st1" x1="71.7" y1="223.2" x2="278.1" y2="104"></line>
+                    </g>
+                    <g class="snv-graphic-element">
+                        <circle class="snv-graphic-element-btn snv-graphic-element-yellow" cx="51.5" cy="190.5" r="50"></circle>
+                        <text transform="matrix(1 0 0 1 31 194.7802)" class="st3 st4">Media</text>
+                        <text transform="matrix(1 0 0 1 118.7122 186.9687)" class="snv-graphic-element-text"><tspan x="0" y="0" class="st5 st3 st6">What type of media </tspan><tspan x="0" y="14.4" class="st5 st3 st6">is the platform based on?</tspan></text>
+                    </g>
+                    <g class="snv-graphic-element">
+                        <circle class="snv-graphic-element-btn snv-graphic-element-blue" cx="258.5" cy="323.5" r="50"></circle>
+                        <text transform="matrix(1 0 0 1 228.5448 327.7802)" class="st3 st4">Audience</text>
+                        <text transform="matrix(1 0 0 1 325.4998 319.9686)" class="snv-graphic-element-text"><tspan x="0" y="0" class="st5 st3 st6">What is the audience </tspan><tspan x="0" y="14.4" class="st5 st3 st6">of the platform?</tspan></text>
+                    </g>
+                    <g class="snv-graphic-element">
+                        <circle class="snv-graphic-element-btn snv-graphic-element-orange" cx="448.5" cy="190.5" r="50"></circle>
+                        <text transform="matrix(1 0 0 1 418.8267 194.7803)" class="st3 st4">Products</text>
+                        <text transform="matrix(1 0 0 1 250 186.9686)" class="snv-graphic-element-text"><tspan x="0" y="0" class="st5 st3 st6">What technical products</tspan><tspan x="-4" y="14.4" class="st5 st3 st6">do exist on the platform?</tspan></text>
+                    </g>
+                    <g class="snv-graphic-element">
+                        <circle class="snv-graphic-element-btn snv-graphic-element-pink" cx="258.5" cy="52.5" r="50"></circle>
+                        <text transform="matrix(1 0 0 1 230.5 56.7803)" class="st3 st4">Strategy</text>
+                        <text transform="matrix(1 0 0 1 75 48.9688)" class="snv-graphic-element-text"><tspan x="0" y="0" class="st5 st3 st6">What is the platformâ€˜s</tspan><tspan x="38" y="14.4" class="st5 st3 st6">main strategy?</tspan></text>
+                    </g>
+                    </svg>
+                </div>
+                <div id="snv-graphic-plan-define" class="snv-graphic-panel layer-hide">
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+                    <svg version="1.1" id="plan-understand" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 376.5" style="enable-background:new 0 0 500 376.5;" xml:space="preserve">
+                    <line class="st1" x1="403.5" y1="133.5" x2="311.9" y2="51.6"></line>
+                    <line class="st1" x1="358.1" y1="309.9" x2="408.9" y2="205"></line>
+                    <line class="st1" x1="189.2" y1="337.8" x2="321" y2="337.8"></line>
+                    <line class="st1" x1="102.6" y1="205" x2="153.5" y2="309.9"></line>
+                    <line class="st1" x1="199.4" y1="51.7" x2="108.1" y2="133.5"></line>
+                    <text transform="matrix(1 0 0 1 214 42)" class="st4">Legal experts</text>
+                    <text transform="matrix(1 0 0 1 394 180)" class="st4">Platforms</text>
+                    <text transform="matrix(1 0 0 1 48 180)" class="st4"><tspan x="0" y="0">Users and </tspan><tspan x="-7" y="16.8">civil society</tspan></text>
+                    <text transform="matrix(1 0 0 1 306 365)" class="st4">Researchers</text>
+                    <text transform="matrix(1 0 0 1 84 365)" class="st4">Independent contractors</text>
+                    <g>
+                        <path class="st2" d="M164.7,340.7h-9.9l0-4.3c0-1.1,0.9-2,1.9-2h9.2"></path>
+                        <g>
+                            <g>
+                                <circle class="st2" cx="161" cy="330.7" r="2.8"></circle>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <path class="st2" d="M172.3,343.9h-6c-0.4,0-0.8-0.4-0.8-0.8v-6c0-0.4,0.4-0.8,0.8-0.8h6c0.4,0,0.8,0.4,0.8,0.8v6
+                                    C173.1,343.5,172.8,343.9,172.3,343.9z"></path>
+                            </g>
+                            <path class="st2" d="M163.8,336.9l5.1-4.7c0.4-0.4,1.1-0.4,1.5,0.1l4.4,4.7"></path>
+                        </g>
+                    </g>
+                    <g>
+                        <path class="st2" d="M348.9,339.4H339l0-4.3c0-1.1,0.9-2,1.9-2h8.6c1.1,0,1.9,0.9,1.9,2v0.7"></path>
+                        <g>
+                            <g>
+                                <circle class="st2" cx="345.2" cy="329.3" r="2.8"></circle>
+                            </g>
+                        </g>
+                        <g>
+                            <path class="st2" d="M351.6,342.3h-2c-0.2,0-0.4-0.2-0.4-0.4v-5.2c0-0.2,0.2-0.4,0.4-0.4h2c0.2,0,0.4,0.2,0.4,0.4v5.2
+                                C352.1,342.1,351.9,342.3,351.6,342.3z"></path>
+                            <path class="st2" d="M354.5,342.3h-1.8c-0.3,0-0.6-0.2-0.6-0.6v-8.3c0-0.3,0.2-0.6,0.6-0.6h1.8c0.3,0,0.6,0.2,0.6,0.6v8.3
+                                C355,342.1,354.8,342.3,354.5,342.3z"></path>
+                            <path class="st2" d="M357.5,342.3h-1.9c-0.3,0-0.5-0.2-0.5-0.5v-6.6c0-0.3,0.2-0.5,0.5-0.5h1.9c0.3,0,0.5,0.2,0.5,0.5v6.6
+                                C358,342.1,357.8,342.3,357.5,342.3z"></path>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path class="st2" d="M251.8,16.3l-6.1-0.1l0-4.4c0-1.1,0.9-2,1.9-2h8.7c0.3,0,0.5,0.1,0.8,0.2"></path>
+                            <circle class="st2" cx="252" cy="5.7" r="3.1"></circle>
+                        </g>
+                        <g>
+                            <path class="st2" d="M257.6,11l-0.3-0.6c-0.2-0.3-0.1-0.6,0.2-0.8l3.3-1.9c0.3-0.2,0.6-0.1,0.8,0.2l0.3,0.6
+                                c0.2,0.3,0.1,0.6-0.2,0.8l-3.3,1.9C258.1,11.3,257.8,11.2,257.6,11z"></path>
+                            <path class="st2" d="M259.9,13.7l-7.2,4.2c-0.4,0.2-0.9,0-1.1-0.4v0c-0.3-0.4-0.2-1,0.2-1.2l7.2-4.2"></path>
+                            <path class="st2" d="M260.7,16.2l-0.3-0.6c-0.2-0.3-0.1-0.6,0.2-0.8l3.3-1.9c0.3-0.2,0.6-0.1,0.8,0.2l0.3,0.6
+                                c0.2,0.3,0.1,0.6-0.2,0.8l-3.3,1.9C261.2,16.6,260.8,16.5,260.7,16.2z"></path>
+                            <path class="st2" d="M259.1,20.3v-1.2c0-0.4,0.3-0.7,0.7-0.7h5.3c0.4,0,0.7,0.3,0.7,0.7v1.2H259.1z"></path>
+                            <line class="st2" x1="258.7" y1="11.4" x2="260.6" y2="14.7"></line>
+                            <line class="st2" x1="261.6" y1="9.4" x2="263.6" y2="12.9"></line>
+                        </g>
+                    </g>
+                    <g>
+                        <path class="st2" d="M82.7,149.3l-8.1-0.1c-1.1,0-1.9,0.9-1.9,2l0,4.3h7.6"></path>
+                        <circle class="st2" cx="79.4" cy="145.4" r="3"></circle>
+                        <path class="st2" d="M80.3,159.6l0-4.3c0-1.1,0.9-2,1.9-2h8.6c1.1,0,1.9,0.9,1.9,2v4.3H80.3z"></path>
+                        <circle class="st2" cx="86.5" cy="149.4" r="3"></circle>
+                        <path class="st2" d="M99.7,147.7h-2.3l-3,1.8v-1.8h-1.3c-0.9,0-1.7-0.8-1.7-1.7v-4.6c0-0.9,0.8-1.7,1.7-1.7h6.6
+                            c0.9,0,1.7,0.8,1.7,1.7v4.6C101.4,146.9,100.7,147.7,99.7,147.7z"></path>
+                        <g>
+                            <line class="st2" x1="93.4" y1="145.2" x2="99.4" y2="145.2"></line>
+                            <line class="st2" x1="93.4" y1="142.2" x2="99.4" y2="142.2"></line>
+                        </g>
+                    </g>
+                    <g>
+                        <path class="st2" d="M425.2,151l-5.3-3.3c-1.2-0.8-1.2-2.6,0-3.3l5.2-3.2c0.6-0.4,1.4-0.4,2,0l5.2,3.3c1.2,0.8,1.3,2.6,0,3.3
+                            l-5.2,3.2C426.7,151.4,425.9,151.4,425.2,151z"></path>
+                        <path class="st2" d="M431.6,148.6l1,0.6c1.2,0.8,1.3,2.6,0,3.3l-5.2,3.2c-0.6,0.4-1.4,0.4-2,0l-5.3-3.3c-1.2-0.8-1.2-2.6,0-3.3
+                            l0.9-0.6"></path>
+                        <path class="st2" d="M431.4,153.4l1.1,0.7c1.2,0.8,1.3,2.6,0,3.3l-5.2,3.2c-0.6,0.4-1.4,0.4-2,0l-5.3-3.3c-1.2-0.8-1.2-2.6,0-3.3
+                            l1.2-0.7"></path>
+                    </g>
+                    </svg>
+                </div>
+            </div>
+        </div>      
+    </div>
+    <div id="snv-graphic-scenarios" class="snv-graphic-layer layer-hide">
+        <div class="snv-graphic-submenu">
+            <button class="snv-submenu-button btn-active" onclick="showPanel('snv-graphic-scenarios-define', this)">Define scenarios</button>
+            <button class="snv-submenu-button" onclick="showPanel('snv-graphic-scenarios-prioritize', this)">Prioritise scenarios</button>
+        </div>
+        <div class="snv-graphic-main-container">
+            <div class="snv-graphic-sidebar">
+                <p>
+                    <strong>Define</strong> and <strong>prioritise</strong> scenarios. A scenario is a description of specific issues related to a 'systemic risk'. It breaks down abstract risks into concrete testable hypotheses by defining the affected party and its characteristics, the harm, the involved elements of the platform and the further impact. A systemic risk may often involve several scenarios; therefore, selecting scenarios and deciding if they have a 'high' priority is necessary. 
+                </p>
+                <a href="https://www.stiftung-nv.de/de/publication/auditing-recommender-systems#step2-scenarios" target="_blank">More details</a>
+            </div>
+            <div class="snv-graphic-content">
+                <div id="snv-graphic-scenarios-define" class="snv-graphic-panel layer-show">
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 376.5" style="enable-background:new 0 0 500 376.5;" xml:space="preserve">
+                    <g id="scenarios-define-01">
+                        <text transform="matrix(1 0 0 1 63.5789 14.2822)"><tspan x="0" y="0" class="st7 st3">An individual/group/institution</tspan><tspan x="255.8" y="0" class="st3"> </tspan><tspan x="259.9" y="0" class="st8 st3">defined by </tspan><tspan x="0" y="56" class="st8 st3">some characteristics</tspan><tspan x="174.9" y="56" class=" st3"> </tspan><tspan x="179" y="56" class="st9  st3">has experienced a </tspan><tspan x="0" y="112" class="st9  st3">harm</tspan><tspan x="43.3" y="112" class=" st3"> </tspan><tspan x="47.5" y="112" class="st10  st3">that is related to something happening </tspan><tspan x="0" y="168" class="st10  st3">on the platform</tspan><tspan x="128.6" y="168" class=" st3"> and </tspan><tspan x="168.1" y="168" class="st11  st3">this also has macro </tspan><tspan x="0" y="224" class="st11  st3">impact.</tspan></text>
+                    </g>
+                    <g id="scenarios-define-02">
+                        <g>
+                            <rect x="63.6" y="1.7" class="st0" width="373.4" height="306.5"></rect>
+                            <text transform="matrix(1 0 0 1 63.5967 14.7124)"><tspan x="0" y="0" class="st3 st7">A young adult </tspan><tspan x="116.7" y="0" class="st8 st3">who is temporarily in a personal crisis </tspan><tspan x="0" y="56" class="st9  st3">is overly exposed to videos describing </tspan><tspan x="0" y="112" class="st9  st3">or showing self-harm</tspan><tspan x="176.5" y="112" class=" st3"> </tspan><tspan x="180.7" y="112" class="st10  st3">by the recommender </tspan><tspan x="0" y="168" class="st10  st3">system of the 'ForYou' feed</tspan><tspan x="224.1" y="168" class=" st3"> and </tspan><tspan x="263.7" y="168" class="st11  st3">this might </tspan><tspan x="0" y="224" class="st11  st3">exacerbate the general mental health crisis of </tspan><tspan x="0" y="280" class="st11  st3">young adults.</tspan></text>
+                        </g>
+                        <g>
+                            <rect x="64" y="23" class="st7" width="90" height="18"></rect>
+                            <text transform="matrix(1 0 0 1 69.665 35.832)" class="st12 st6 st10">affected party</text>
+                        </g>
+                        <g>
+                            <rect x="182" y="23" class="st8" width="90" height="18"></rect>
+                            <text transform="matrix(1 0 0 1 188.2588 35.832)" class="st12 st6 st10">characteristic</text>
+                        </g>
+                        <g>
+                            <rect x="64" y="79" class="st9" width="44" height="18"></rect>
+                            <text transform="matrix(1 0 0 1 71.0527 91.832)" class="st12 st6 st10">harm</text>
+                        </g>
+                        <g>
+                            <rect x="245" y="136" class="st10" width="130" height="18"></rect>
+                            <text transform="matrix(1 0 0 1 250.251 148.832)" class="st12 st6 st10">platform involvement</text>
+                        </g>
+                        <g>
+                            <rect x="325" y="191" class="st11" width="90" height="18"></rect>
+                            <text transform="matrix(1 0 0 1 331.8223 203.832)" class="st12 st6 st10">macro impact</text>
+                        </g>
+                    </g>
+                    </svg>
+                </div>
+                <div id="snv-graphic-scenarios-prioritize" class="snv-graphic-panel layer-hide">
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+                    <svg version="1.1" id="scenarios-prioritize" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 376.5" style="enable-background:new 0 0 500 376.5;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <rect x="415.7" y="2.9" class="st13" width="10" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="389.4" y="2.9" class="st13" width="9.3" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="363.2" y="2.9" class="st13" width="8.6" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="337" y="2.9" class="st13" width="7.9" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="310.8" y="2.9" class="st13" width="7.2" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="284.5" y="2.9" class="st13" width="6.5" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="258.3" y="2.9" class="st13" width="5.8" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="232.1" y="2.9" class="st13" width="5.2" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="205.8" y="2.9" class="st13" width="4.5" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="179.6" y="2.9" class="st13" width="3.8" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="153.4" y="2.9" class="st13" width="3.1" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="127.1" y="2.9" class="st13" width="2.4" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="100.9" y="2.9" class="st13" width="1.7" height="247"></rect>
+                        </g>
+                        <g>
+                            <rect x="74.7" y="2.9" class="st13" width="1" height="247"></rect>
+                        </g>
+                    </g>
+                    <text transform="matrix(1 0 0 1 72.9999 276.3171)" class="st4">Normal priority</text>
+                    <text transform="matrix(1 0 0 1 345 276.3171)" class="st4">High priority</text>
+                    <g>
+                        <rect x="188.7" y="85.4" class="st14" width="141" height="108"></rect>
+                        <rect x="178.7" y="75.4" class="st14" width="141" height="108"></rect>
+                        <rect x="168.7" y="65.4" class="st14" width="141" height="108"></rect>
+                    </g>
+                    <rect x="255.2" y="85.9" class="st8" width="43" height="5"></rect>
+                    <rect x="184.2" y="85.9" class="st11" width="65" height="5"></rect>
+                    <rect x="255.2" y="130.9" class="st11" width="31" height="5"></rect>
+                    <rect x="184.2" y="130.9" class="st10" width="65" height="5"></rect>
+                    <rect x="184.2" y="145.9" class="st11" width="88" height="5"></rect>
+                    <rect x="184.2" y="100.9" class="st7" width="90" height="5"></rect>
+                    <rect x="184.2" y="115.9" class="st9" width="107" height="5"></rect>
+                    <path class="st15" d="M161.7,125.7h-25.1 M146.1,115.7l-10,10l10,10"></path>
+                    <path class="st15" d="M337.1,125.7h25.1 M352.6,135.8l10-10l-10-10"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="snv-graphic-measure" class="snv-graphic-layer layer-hide">
+        <div class="snv-graphic-submenu">
+            <button class="snv-submenu-button btn-active" onclick="showPanel('snv-graphic-measure-audits', this)">Types of audits</button>
+            <button class="snv-submenu-button" onclick="showPanel('snv-graphic-measure-prioritize', this)">Prioritise</button>
+        </div>
+        <div class="snv-graphic-main-container">
+            <div class="snv-graphic-sidebar">
+                <p>
+                    Develop measurements to understand the scenario. There are different <strong>types of algorithm audits</strong>, as well as <strong>platform elements</strong> to consider. These can range from automated measurements that look at the actual implementation to user perspectives through surveys. 
+                    An auditor needs to develop multiple measurements and then prioritise them to find the best measurement(s) to test a specific scenario.                             
+                </p>
+                <a href="https://www.stiftung-nv.de/de/publication/auditing-recommender-systems#step3-measurements" target="_blank">More details</a>
+            </div>
+            <div class="snv-graphic-content">
+                <div id="snv-graphic-measure-audits" class="snv-graphic-panel layer-show">
+                    <div id="snv-graphic-measure-audits-header">
+                        <p>Select audit type or platform element:</p>
+                        <select id="snv-graphic-measure-select" class="measure-audit" onchange="showElements(this)">
+                            <optgroup id="audits" label="Types of audits">
+                                <option value="code-audit">Code audit</option>
+                                <option value="crowd-audit">Crowd-sourced audit</option>
+                                <option value="document-audit">Document audit</option>
+                                <option value="architecture-audit">Architecture audit</option>
+                                <option value="automated-audit">Automated audit</option>
+                                <option value="user-survey">User survey</option>
+                            </optgroup>
+                            <optgroup id="elements" label="Platform elements">
+                                <option value="user-experience">User experience</option>
+                                <option value="user-interface">User interface</option>
+                                <option value="algorithmic-logic">Algorithmic logic</option>
+                                <option value="content-moderation">Content moderation</option>
+                                <option value="terms-conditions">Terms and conditions</option>
+                                <option value="advertisement">Advertisement</option>
+                                <option value="report-mechanisms">Report mechanisms</option>
+                                <option value="data-practices">Data-related practices</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div id="snv-graphic-measure-audits-body">
+                        <p id="snv-graphic-measure-audits-body-title">Connected elements</p>
+                        <div class="snv-graphic-measure-element layer-hide data-practices algorithmic-logic">
+                            <div class="snv-graphic-measure-button measure-audit">
+                                Code audit
+                            </div>
+                            <div id="code-audit-text" class="snv-graphic-measure-text">
+                                Text
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element layer-hide user-experience algorithmic-logic advertisement">
+                            <div class="snv-graphic-measure-button measure-audit">
+                                Crowd-sourced audit
+                            </div>
+                            <div id="crowd-audit-text" class="snv-graphic-measure-text">
+                                Text
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element layer-hide terms-conditions user-interface data-practices content-moderation">
+                            <div class="snv-graphic-measure-button measure-audit">
+                                Document audit
+                            </div>
+                            <div id="document-audit-text" class="snv-graphic-measure-text">
+                                Text
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element layer-hide content-moderation report-mechanisms">
+                            <div class="snv-graphic-measure-button measure-audit">
+                                Architecture audit
+                            </div>
+                            <div id="architecture-audit-text" class="snv-graphic-measure-text">
+                                Text
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element layer-hide user-interface content-moderation algorithmic-logic advertisement">
+                            <div class="snv-graphic-measure-button measure-audit">
+                                Automated audit
+                            </div>
+                            <div id="automated-audit-text" class="snv-graphic-measure-text">
+                                Text
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element layer-hide user-experience user-interface report-mechanisms">
+                            <div class="snv-graphic-measure-button measure-audit">
+                                User survey
+                            </div>
+                            <div id="survey-audit-text" class="snv-graphic-measure-text">
+                                Text
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element layer-hide crowd-audit user-survey">
+                            <div class="snv-graphic-measure-button measure-element">
+                                User experience
+                            </div>
+                            <div id="experience-element-text" class="snv-graphic-measure-text">
+                                Text
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element layer-hide document-audit user-survey automated-audit">
+                            <div class="snv-graphic-measure-button measure-element">
+                                User interface
+                            </div>
+                            <div id="interface-element-text" class="snv-graphic-measure-text">
+                                Text
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element code-audit crowd-audit automated-audit">
+                            <div class="snv-graphic-measure-button measure-element">
+                                Algorithmic logic
+                            </div>
+                            <div id="logic-element-text" class="snv-graphic-measure-text">
+                                Review source code, evaluate model parameters.
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element layer-hide document-audit architecture-audit automated-audit">
+                            <div class="snv-graphic-measure-button measure-element">
+                                Content moderation
+                            </div>
+                            <div id="content-element-text" class="snv-graphic-measure-text">
+                                Text
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element layer-hide document-audit">
+                            <div class="snv-graphic-measure-button measure-element">
+                                Terms and conditions
+                            </div>
+                            <div id="terms-element-text" class="snv-graphic-measure-text">
+                                Text
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element layer-hide crowd-audit automated-audit">
+                            <div class="snv-graphic-measure-button measure-element">
+                                Advertisement
+                            </div>
+                            <div id="advertisement-element-text" class="snv-graphic-measure-text">
+                                Text
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element layer-hide architecture-audit user-survey">
+                            <div class="snv-graphic-measure-button measure-element">
+                                Report mechanisms
+                            </div>
+                            <div id="report-element-text" class="snv-graphic-measure-text">
+                                Text
+                            </div>
+                        </div>
+                        <div class="snv-graphic-measure-element code-audit document-audit">
+                            <div class="snv-graphic-measure-button measure-element">
+                                Data-related practices
+                            </div>
+                            <div id="data-element-text" class="snv-graphic-measure-text">
+                                Check dataflows, ensure that sensitive data like ethnicity is not used as model input.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="snv-graphic-measure-prioritize" class="snv-graphic-panel layer-hide">
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+                    <svg version="1.1" id="measure-prioritize" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 376.5" style="enable-background:new 0 0 500 376.5;" xml:space="preserve">
+                    <g>
+                        <circle class="st17" cx="249.6" cy="241.3" r="50"></circle>
+                        <text transform="matrix(1 0 0 1 221.4787 236.893)"><tspan x="0" y="0" class="st12 st4">Measure </tspan><tspan x="4.5" y="16.8" class="st12 st4">Priority</tspan></text>
+                    </g>
+                    <g>
+                        <g>
+                            <g>
+                                <polyline class="st20" points="249.1,178.7 249.1,128.8 217.1,96.8           "></polyline>
+                                <g>
+                                    <polygon class="st5" points="251.6,178 249.1,182.3 246.6,178                "></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <polyline class="st20" points="249.1,178.7 249.1,129.3 281.1,97.3       "></polyline>
+                            <g>
+                                <polygon class="st5" points="251.6,178 249.1,182.3 246.6,178            "></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g class="snv-graphic-measure-prioritize-container">
+                        <circle class="snv-graphic-element-btn snv-graphic-element-pink" cx="320.1" cy="51.3" r="50"></circle>
+                        <text transform="matrix(1 0 0 1 277.9904 56.393)" class="st4">Detectability</text>
+                        <g class="snv-graphic-measure-prioritize-element">
+                            <circle class="st18" cx="388.6" cy="119.3" r="30"></circle>
+                            <text transform="matrix(1 0 0 1 371.5629 117.3896)"><tspan x="-3" y="0" class="st16">Platform</tspan><tspan x="-4.6" y="12" class=" st16">influence</tspan></text>
+                        </g>
+                        <g class="snv-graphic-measure-prioritize-element">
+                            <circle class="st18" cx="320.6" cy="146.3" r="30"></circle>
+                            <text transform="matrix(1 0 0 1 305.9924 144.3896)"><tspan x="0" y="0" class="st16">Macro</tspan><tspan x="-4" y="12" class=" st16"> Effects</tspan></text>
+                        </g>
+                        <g class="snv-graphic-measure-prioritize-element">
+                            <circle class="st18" cx="418.6" cy="54.3" r="30"></circle>
+                            <text transform="matrix(1 0 0 1 394.8478 52.3896)"><tspan x="0" y="0" class="st16">Individual </tspan><tspan x="11.7" y="12" class=" st16">harm</tspan></text>
+                        </g>
+                        <text class="snv-graphic-measure-prioritize-text st4" transform="matrix(1 0 0 1 337.2692 220.4986)"><tspan x="8" y="0" class="st5">How can a scenario</tspan><tspan x="-2.2" y="14.4" class="st5">be effectively detected</tspan><tspan x="-5" y="28.8" class="st5">with this measurement?</tspan></text>
+                    </g>
+                    <g class="snv-graphic-measure-prioritize-container">
+                        <circle class="snv-graphic-element-btn snv-graphic-element-yellow" cx="180.1" cy="51.3" r="50"></circle>
+                        <text transform="matrix(1 0 0 1 147.9811 56.393)" class="st4">Difficulty</text>
+                        <g class="snv-graphic-measure-prioritize-element">
+                            <circle class="st19" cx="81.4" cy="54" r="30"></circle>
+                            <text transform="matrix(1 0 0 1 66.4328 45.3896)"><tspan x="0" y="0" class="st16">Imple-</tspan><tspan x="-9.8" y="12" class=" st16">mentation </tspan><tspan x="2.5" y="24" class=" st16">costs</tspan></text>
+                        </g>
+                        <g class="snv-graphic-measure-prioritize-element">
+                            <circle class="st19" cx="111.4" cy="119" r="30"></circle>
+                            <text transform="matrix(1 0 0 1 92.0581 117.3896)"><tspan x="0" y="0" class="st16">Replica-</tspan><tspan x="7.9" y="12" class=" st16">bility</tspan></text>
+                        </g>
+                        <g class="snv-graphic-measure-prioritize-element">
+                            <circle class="st19" cx="179.4" cy="146" r="30"></circle>
+                            <text transform="matrix(1 0 0 1 163.6574 138.3896)"><tspan x="0" y="0" class="st16">Repre-</tspan><tspan x="-7.8" y="12" class=" st16">sentative-</tspan><tspan x="5" y="24" class=" st16">ness</tspan></text>
+                        </g>
+                        <text transform="matrix(1 0 0 1 57.6593 229.4986)" class="snv-graphic-measure-prioritize-text st4"><tspan x="0" y="0" class="st5">How difficult will it </tspan><tspan x="2.9" y="14.4" class="st5">be to execute this </tspan><tspan x="11.9" y="28.8" class="st5 ">measurement?</tspan></text>
+                    </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="snv-graphic-evaluate" class="snv-graphic-layer layer-hide">
+        <div class="snv-graphic-submenu">
+            <button class="snv-submenu-button btn-active" onclick="showPanel('snv-graphic-evaluate-goals', this)">Goals</button>
+            <button class="snv-submenu-button" onclick="showPanel('snv-graphic-evaluate-report', this)">Report</button>
+        </div>
+        <div class="snv-graphic-main-container">
+            <div class="snv-graphic-sidebar">
+                <p>
+                    After conducting the measurements, you need to <strong>analyse</strong> the results and <strong>write</strong> an audit report. The report should foster observability and enable reproducibility and recommend mitigation measures. 
+                </p>
+                <a href="https://www.stiftung-nv.de/de/publication/auditing-recommender-systems#step4-evaluation-and-reporting" target="_blank">More details</a>
+            </div>
+            <div class="snv-graphic-content">
+                <div id="snv-graphic-evaluate-goals" class="snv-graphic-panel layer-show">
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+                    <svg version="1.1" id="measure-prioritize" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 376.5" style="enable-background:new 0 0 500 376.5;" xml:space="preserve">
+                    <g>
+                        <circle class="st24" cx="248.6" cy="138.6" r="4.2"></circle>
+                        <path class="st25" d="M257.6,132.1c1.3,1.8,2.1,4.1,2.1,6.5c0,6.1-5,11.1-11.1,11.1c-6.1,0-11.1-5-11.1-11.1c0-2.3,0.7-4.4,1.9-6.2"></path>
+                        <path class="st25" d="M265.6,139.6c0,0-6.8,10.8-17,10.1c-10.4-0.6-17-10.1-17-10.1s6.6-10.1,17-10.1
+                            C258.8,129.5,265.6,139.6,265.6,139.6z"></path>
+                    </g>
+                    <g>
+                        <circle class="st25" cx="238.3" cy="204.5" r="4"></circle>
+                        <path class="st25" d="M262.8,204.5c0,2.2-1.8,4-4,4s-4-1.8-4-4c0-2.2,1.8-4,4-4S262.8,202.3,262.8,204.5z"></path>
+                        <path class="st25" d="M239.9,197.9c2-2.6,5.2-4.3,8.7-4.3c3.4,0,6.5,1.6,8.5,4"></path>
+                        <path class="st25" d="M257.7,211c-2,2.9-5.3,4.8-9.1,4.8c-3.8,0-7.1-1.9-9.1-4.8"></path>
+                        <polygon points="258.5,195.6 254.6,198.3 257.8,198.8    "></polygon>
+                        <polygon points="238.1,213.1 242,210.4 238.8,210    "></polygon>
+                    </g>
+                    <g>
+                        <text transform="matrix(1 0 0 1 212.0789 166.8727)" class="st6">Observability</text>
+                    </g>
+                    <g>
+                        <text transform="matrix(1 0 0 1 204.5105 234.8726)" class="st6">Reproducibility</text>
+                    </g>
+                    <g>
+                        <g>
+                            <path class="st26" d="M278.5,43.6c55.6,8.6,99.9,51.4,110.7,106.2"></path>
+                            <g>
+                                <polygon class="st13" points="395,147.9 383.1,150.1 390.1,155           "></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path class="st26" d="M283.6,327.5c54.9-10.7,97.7-55,106.5-110.5"></path>
+                            <g>
+                                <polygon class="st13" points="283.4,321.3 285.5,333.3 278.5,328.4           "></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path class="st26" d="M106.3,222.1c10.9,54.8,55.1,97.6,110.7,106.2"></path>
+                            <g>
+                                <polygon class="st13" points="112.4,221.9 100.5,224 105.4,217           "></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path class="st26" d="M212.7,44.3C157.5,54.7,114.2,99.1,105.4,155"></path>
+                            <g>
+                                <polygon class="st13" points="213,50.4 210.9,38.5 217.9,43.4            "></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g class="snv-graphic-element">
+                        <g>
+                            <circle class="snv-graphic-element-orange" cx="247.8" cy="42" r="17"></circle>
+                            <g>
+                                <circle class="st28" cx="242.9" cy="37.1" r="2.1"></circle>
+                                <circle class="st28" cx="252.7" cy="37.1" r="2.1"></circle>
+                                <circle class="st28" cx="242.9" cy="46.9" r="2.1"></circle>
+                                <circle class="st28" cx="252.7" cy="46.9" r="2.1"></circle>
+                                <line class="st28" x1="245" y1="37.1" x2="250.6" y2="37.1"></line>
+                                <line class="st28" x1="251.3" y1="38.6" x2="244.5" y2="45.5"></line>
+                                <line class="st28" x1="245" y1="46.9" x2="250.6" y2="46.9"></line>
+                            </g>
+                        </g>
+                        <text class="snv-graphic-element-text st6" transform="matrix(1 0 0 1 234.8736 12.3017)">Plan</text>
+                    </g>
+                    <g class="snv-graphic-element">
+                        <g>
+                            <circle class="snv-graphic-element-pink" cx="391.6" cy="186" r="17"></circle>
+                            <g>
+                                <path class="st30" d="M391.3,183.9h6c0.7,0,1.3,0.6,1.3,1.3v6c0,0.7-0.6,1.3-1.3,1.3h-6c-0.7,0-1.3-0.6-1.3-1.3v-6
+                                    C389.9,184.5,390.5,183.9,391.3,183.9z"></path>
+                                <path class="st30" d="M389.3,189.9h-0.7c-0.7,0-1.3-0.6-1.3-1.3v-6c0-0.7,0.6-1.3,1.3-1.3h6c0.7,0,1.3,0.6,1.3,1.3v0.7"></path>
+                                <path class="st30" d="M386.6,187.3h-0.7c-0.7,0-1.3-0.6-1.3-1.3v-6c0-0.7,0.6-1.3,1.3-1.3h6c0.7,0,1.3,0.6,1.3,1.3v0.7"></path>
+                            </g>
+                        </g>
+                        <text transform="matrix(1 0 0 1 418.6572 190.3017)" class="snv-graphic-element-text st6">Scenarios</text>
+                    </g>
+                    <g class="snv-graphic-element">
+                        <g>
+                            <circle class="snv-graphic-element-blue" cx="248.8" cy="328.2" r="17"></circle>
+                            <g>
+                                <circle class="st30" cx="248.8" cy="328.2" r="7"></circle>
+                                <circle class="st23" cx="248.8" cy="328.2" r="1.4"></circle>
+                                <line class="st32" x1="248.8" y1="328.2" x2="251.6" y2="324"></line>
+                            </g>
+                        </g>
+                        <text transform="matrix(1 0 0 1 224.0777 364.3017)" class="snv-graphic-element-text st6">Measure</text>
+                    </g>
+                    <g class="snv-graphic-element">
+                        <g>
+                            <circle class="snv-graphic-element-yellow" cx="103.6" cy="186" r="17"></circle>
+                            <g>
+                                <circle class="st34" cx="102" cy="184.4" r="5.4"></circle>
+                                <line class="st35" x1="105.9" y1="188.3" x2="110.6" y2="193"></line>
+                            </g>
+                        </g>
+                        <text transform="matrix(1 0 0 1 26.0176 188.3017)" class="snv-graphic-element-text st6">Evaluate</text>
+                    </g>
+                    </svg>
+                </div>
+                <div id="snv-graphic-evaluate-report" class="snv-graphic-panel layer-hide">
+                    <!--?xml version="1.0" encoding="utf-8"?-->
+                    <svg version="1.1" id="measure-prioritize" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 376.5" style="enable-background:new 0 0 500 376.5;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path class="st26" d="M278.5,43.6c55.6,8.6,99.9,51.4,110.7,106.2"></path>
+                            <g>
+                                <polygon class="st13" points="395,147.9 383.1,150.1 390.1,155           "></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path class="st26" d="M283.6,327.5c54.9-10.7,97.7-55,106.5-110.5"></path>
+                            <g>
+                                <polygon class="st13" points="283.4,321.3 285.5,333.3 278.5,328.4           "></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path class="st26" d="M106.3,222.1c10.9,54.8,55.1,97.6,110.7,106.2"></path>
+                            <g>
+                                <polygon class="st13" points="112.4,221.9 100.5,224 105.4,217           "></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path class="st26" d="M212.7,44.3C157.5,54.7,114.2,99.1,105.4,155"></path>
+                            <g>
+                                <polygon class="st13" points="213,50.4 210.9,38.5 217.9,43.4            "></polygon>
+                            </g>
+                        </g>
+                    </g>
+                    <g class="snv-graphic-element">
+                        <g>
+                            <circle class="snv-graphic-element-orange" cx="247.8" cy="42" r="17"></circle>
+                            <g>
+                                <circle class="st28" cx="242.9" cy="37.1" r="2.1"></circle>
+                                <circle class="st28" cx="252.7" cy="37.1" r="2.1"></circle>
+                                <circle class="st28" cx="242.9" cy="46.9" r="2.1"></circle>
+                                <circle class="st28" cx="252.7" cy="46.9" r="2.1"></circle>
+                                <line class="st28" x1="245" y1="37.1" x2="250.6" y2="37.1"></line>
+                                <line class="st28" x1="251.3" y1="38.6" x2="244.5" y2="45.5"></line>
+                                <line class="st28" x1="245" y1="46.9" x2="250.6" y2="46.9"></line>
+                            </g>
+                        </g>
+                        <text class="snv-graphic-element-text st6" transform="matrix(1 0 0 1 234.8736 12.3017)">Plan</text>
+                    </g>
+                    <g class="snv-graphic-element">
+                        <g>
+                            <circle class="snv-graphic-element-pink" cx="391.6" cy="186" r="17"></circle>
+                            <g>
+                                <path class="st30" d="M391.3,183.9h6c0.7,0,1.3,0.6,1.3,1.3v6c0,0.7-0.6,1.3-1.3,1.3h-6c-0.7,0-1.3-0.6-1.3-1.3v-6
+                                    C389.9,184.5,390.5,183.9,391.3,183.9z"></path>
+                                <path class="st30" d="M389.3,189.9h-0.7c-0.7,0-1.3-0.6-1.3-1.3v-6c0-0.7,0.6-1.3,1.3-1.3h6c0.7,0,1.3,0.6,1.3,1.3v0.7"></path>
+                                <path class="st30" d="M386.6,187.3h-0.7c-0.7,0-1.3-0.6-1.3-1.3v-6c0-0.7,0.6-1.3,1.3-1.3h6c0.7,0,1.3,0.6,1.3,1.3v0.7"></path>
+                            </g>
+                        </g>
+                        <text transform="matrix(1 0 0 1 418.6572 190.3017)" class="snv-graphic-element-text st6">Scenarios</text>
+                    </g>
+                    <g class="snv-graphic-element">
+                        <g>
+                            <circle class="snv-graphic-element-blue" cx="248.8" cy="328.2" r="17"></circle>
+                            <g>
+                                <circle class="st30" cx="248.8" cy="328.2" r="7"></circle>
+                                <circle class="st23" cx="248.8" cy="328.2" r="1.4"></circle>
+                                <line class="st32" x1="248.8" y1="328.2" x2="251.6" y2="324"></line>
+                            </g>
+                        </g>
+                        <text transform="matrix(1 0 0 1 224.0777 364.3017)" class="snv-graphic-element-text st6">Measure</text>
+                    </g>
+                    <g class="snv-graphic-element">
+                        <g>
+                            <circle class="snv-graphic-element-yellow" cx="103.6" cy="186" r="17"></circle>
+                            <g>
+                                <circle class="st34" cx="102" cy="184.4" r="5.4"></circle>
+                                <line class="st35" x1="105.9" y1="188.3" x2="110.6" y2="193"></line>
+                            </g>
+                        </g>
+                        <text transform="matrix(1 0 0 1 26.0176 188.3017)" class="snv-graphic-element-text st6">Evaluate</text>
+                    </g>
+                    <g>
+                        <rect x="174.2" y="101.1" class="st14" width="154" height="171.6"></rect>
+                        <rect x="170.2" y="97.8" class="st14" width="154" height="171.6"></rect>
+                        <rect x="166.2" y="94.5" class="st14" width="154" height="171.6"></rect>
+                    </g>
+                    <g>
+                        <text transform="matrix(1 0 0 1 178.7861 119.3564)" class="st5 st6">1)  Executive Summary</text>
+                    </g>
+                    <g>
+                        <text transform="matrix(1 0 0 1 178.7861 145.3564)" class="st5 st6">2)  Introduction</text>
+                    </g>
+                    <g>
+                        <text transform="matrix(1 0 0 1 178.7861 171.3564)" class="st5 st6">3)  Scenarios</text>
+                    </g>
+                    <g>
+                        <text transform="matrix(1 0 0 1 178.7861 196.3564)" class="st5 st6">4)  Methods and</text>
+                    </g>
+                    <g>
+                        <text transform="matrix(1 0 0 1 177.7861 235.3564)" class="st5 st6">5)  Results and</text>
+                    </g>
+                    <text transform="matrix(1 0 0 1 193 211.084)" class="st5 st6">Measurements</text>
+                    <text transform="matrix(1 0 0 1 193 250.084)" class="st5 st6">Audit Opinion</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script lang="JavaScript">
+    function minimizeHeader(element, button) {
+    let header = document.getElementById('snv-graphic-header');
+    let main = document.getElementById('snv-graphic-main');
+    let layers = document.querySelectorAll('.snv-graphic-layer');
+    let layer = document.getElementById(element);
+    let submenu = layer.children[0];
+    let buttons = document.querySelectorAll('.snv-graphic-icon-btn');
+    let startItems = document.querySelectorAll('.snv-graphic-start-item');
+    let panels = document.querySelectorAll('.snv-graphic-panel');
+    let firstPanel = layer.getElementsByClassName('snv-graphic-panel')[0];
+    
+    header.classList.add('header-min');
+    header.classList.remove('header-max');
+
+    main.classList.add('main-show');
+    main.classList.remove('main-hide');
+
+    startItems.forEach(el=>el.classList.add('layer-hide'));
+    startItems.forEach(el=>el.classList.remove('layer-show'));
+
+    panels.forEach(el=>el.classList.add('layer-hide'));
+    panels.forEach(el=>el.classList.remove('layer-show'));
+
+    layers.forEach(el=>el.classList.add('layer-hide'));
+    layers.forEach(el=>el.classList.remove('layer-show'));
+
+    buttons.forEach(el=>el.classList.remove('btn-active'));
+    button.classList.add('btn-active');
+
+    layer.classList.remove('layer-hide');
+    layer.classList.add('layer-show');
+
+    for (const node of submenu.children) {
+        node.classList.remove('btn-active');
+    }
+    submenu.children[0].classList.add('btn-active');
+
+    firstPanel.classList.add('layer-show');
+}
+
+function showPanel(element, button) {
+    let panels = document.querySelectorAll('.snv-graphic-panel');
+    let panel = document.getElementById(element);
+    let buttons = button.parentNode.children;
+
+    panels.forEach(el=>el.classList.add('layer-hide'));
+    panels.forEach(el=>el.classList.remove('layer-show'));
+    
+    for (const node of buttons) {
+        node.classList.remove('btn-active');
+    }
+
+    button.classList.add('btn-active');
+
+    panel.classList.add('layer-show');
+}
+
+function showElements(element) {
+    let allElements = document.querySelectorAll('.snv-graphic-measure-element');
+    let selectedOption = element.value;
+    let className = "." + element.value;
+    let connectedElements = document.querySelectorAll(className);
+    let group = element.options[element.selectedIndex].parentNode.id;
+    let textElement = document.getElementById('snv-graphic-measure-audits-body-title');
+
+    if( group == "audits" ){
+        element.classList.remove('measure-element');
+        element.classList.add('measure-audit');
+        textElement.innerHTML = "Connected elements";
+    } else {
+        element.classList.remove('measure-audit');
+        element.classList.add('measure-element');
+        textElement.innerHTML = "Connected audits";
+    }
+
+    if( selectedOption == "code-audit" ) {
+        document.getElementById('data-element-text').innerHTML = "Check dataflows, ensure that sensitive data like ethnicity is not used as model input.";
+        document.getElementById('logic-element-text').innerHTML = "Review source code, evaluate model parameters.";
+    } else if ( selectedOption == "crowd-audit") {
+        document.getElementById('experience-element-text').innerHTML = "Measure what platform elements users access most often.";
+        document.getElementById('logic-element-text').innerHTML = "Measure exposure to specific (harmful) content.";
+        document.getElementById('advertisement-element-text').innerHTML = "Measure exposure to ad categories.";
+    } else if ( selectedOption == "document-audit") {
+        document.getElementById('terms-element-text').innerHTML = "Check if and how terms and conditions are enforced on the platform.";
+        document.getElementById('interface-element-text').innerHTML = "Compare to, e.g., Usability ISO guidelines.";
+        document.getElementById('data-element-text').innerHTML = "Compare data protection measures to the state of the art.";
+        document.getElementById('content-element-text').innerHTML = "Review content moderation guidelines.";
+    } else if ( selectedOption == "architecture-audit") {
+        document.getElementById('content-element-text').innerHTML = "Evaluate the process of content moderation, what is flagged automatically and what levels of manual review are employed.";
+        document.getElementById('report-element-text').innerHTML = "What is the process for handling user reports and how are the outcomes documented.";
+    } else if ( selectedOption == "automated-audit") {
+        document.getElementById('interface-element-text').innerHTML = "Measure clicks to estimate usage of platform elements.";
+        document.getElementById('content-element-text').innerHTML = "Test what content get’s flagged automatically.";
+        document.getElementById('logic-element-text').innerHTML = "Scrape recommended content on search function.";
+        document.getElementById('advertisement-element-text').innerHTML = "Scrape advertisements to review political ad campaigns.";
+    } else if ( selectedOption == "user-survey") {
+        document.getElementById('interface-element-text').innerHTML = "Ask about user interface.";
+        document.getElementById('experience-element-text').innerHTML = "Evaluate what platform elements are known and used.";
+        document.getElementById('report-element-text').innerHTML = "Ask about the experience with reporting mechanisms.";
+    } else if ( selectedOption == "user-experience") {
+        document.getElementById('crowd-audit-text').innerHTML = "Measure what platform elements users access most often.";
+        document.getElementById('survey-audit-text').innerHTML = "Evaluate what platform elements are known and used.";
+    } else if ( selectedOption == "user-interface") {
+        document.getElementById('document-audit-text').innerHTML = "Compare to, e.g., Usability ISO guidelines.";
+        document.getElementById('survey-audit-text').innerHTML = "Ask about user interface.";
+        document.getElementById('automated-audit-text').innerHTML = "Measure clicks to estimate usage of platform elements.";
+    } else if ( selectedOption == "algorithmic-logic") {
+        document.getElementById('code-audit-text').innerHTML = "Review source code, evaluate model parameters.";
+        document.getElementById('crowd-audit-text').innerHTML = "Measure exposure to specific (harmful) content.";
+        document.getElementById('automated-audit-text').innerHTML = "Scrape recommended content on search function.";
+    } else if ( selectedOption == "content-moderation") {
+        document.getElementById('document-audit-text').innerHTML = "Review content moderation guidelines.";
+        document.getElementById('architecture-audit-text').innerHTML = "Evaluate the process of content moderation, what is flagged automatically and what levels of manual review are employed.";
+        document.getElementById('automated-audit-text').innerHTML = "Test what content get’s flagged automatically.";
+    } else if ( selectedOption == "terms-conditions") {
+        document.getElementById('document-audit-text').innerHTML = "Check if and how terms and conditions are enforced on the platform.";
+    } else if ( selectedOption == "advertisement") {
+        document.getElementById('crowd-audit-text').innerHTML = "Measure exposure to ad categories.";
+        document.getElementById('automated-audit-text').innerHTML = "Scrape advertisements to review political ad campaigns.";
+    } else if ( selectedOption == "report-mechanisms") {
+        document.getElementById('architecture-audit-text').innerHTML = "What is the process for handling user reports and how are the outcomes documented.";
+        document.getElementById('survey-audit-text').innerHTML = "Ask about the experience with reporting mechanisms.";
+    } else if ( selectedOption == "data-practices") {
+        document.getElementById('code-audit-text').innerHTML = "Check dataflows, ensure that sensitive data like ethnicity is not used as model input.";
+        document.getElementById('document-audit-text').innerHTML = "Compare data protection measures to the state of the art.";
+    }
+
+    allElements.forEach(el=>el.classList.add('layer-hide'));
+    allElements.forEach(el=>el.classList.remove('layer-show'));
+
+    connectedElements.forEach(el=>el.classList.remove('layer-hide'));
+    connectedElements.forEach(el=>el.classList.add('layer-show'));
+}
+</script>

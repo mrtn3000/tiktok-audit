@@ -1,6 +1,6 @@
 {%- assign img_path = include.path | remove: ".jpg" | remove: ".jpeg" | remove: ".png" | remove: ".tiff" -%}
-
-<figure>
+<center>
+<figure class="justify-content-sm-center">
 
   <picture>
     {% if site.imagemagick.enabled %}
@@ -33,3 +33,4 @@
   {%- if include.caption -%}<figcaption class="caption">{{ include.caption }}</figcaption>{%- endif %}
 
 </figure>
+</center>
