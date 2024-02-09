@@ -258,8 +258,8 @@ jekyll-archives:
     tag: '/blog/tag/:name/'
     category: '/blog/category/:name/'
 
-display_tags: ['code', 'analysis'] # these tags will be displayed on the front page of your blog
-display_categories: ['blockquotes'] # these categories will be displayed on the front page of your blog
+display_tags: ['ads', 'analysis', 'methodology', 'temu', 'fyp'] # these tags will be displayed on the front page of your blog
+display_categories: ['rsba'] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

@@ -5,7 +5,7 @@ date: 2023-10-13 10:00:00
 description: An analysis of the suggested searches related to the Israel-Hamas War
 tags: search, war
 categories: suggested-search
-featured: true
+featured: false
 related_posts: true
 ---
 *By: [Kathy Meßmer](https://www.stiftung-nv.de/en/person/dr-anna-katharina-messmer) and [Martin Degeling](https://www.stiftung-nv.de/en/person/dr-martin-degeling)
