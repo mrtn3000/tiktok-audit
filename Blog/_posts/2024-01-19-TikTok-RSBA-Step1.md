@@ -2,7 +2,7 @@
 layout: post
 title: "🛫 Auditing TikTok: Methodological reflections on the RSBA process"
 date: 2024-01-19 07:00:00
-description: A short analysis of political ads and TikToks new advertisement library
+description: A first introduction into our methodology
 tags: methodology, process, step1
 categories: rsba
 featured: true

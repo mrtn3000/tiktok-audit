@@ -69,7 +69,7 @@ However, organic marketing drives the ad ratio higher than 20%. To give you an e
 
 This analysis has some significant limitations as it is based on hashtags, which were only available for around 70% of the videos in this dataset.
 
-## Most paid promotion ads target small audiences#
+## Most paid promotion ads target small audiences
 
 {% include plotly.html data="/assets/plotly/2024-02_ad_cummulative.js" id="ceba7163-8f49-4dcc-9e4f-c44ef053c008" caption="The chart illustrates the cumulative distribution of advertisements based on the share of users they are exposed to. The x-axis, 'Share of Users,' indicates the proportion of users to whom an ad is shown, while the y-axis, 'Cumulative Frequency (%),' represents the cumulative percentage of ads falling within or below each share-of-users category." %} 
 
@@ -85,7 +85,7 @@ However, besides these general statistics, the ad library could be more usable a
 
 Therefore, we developed our own means of access to be able to match the paid content shown to our sock puppets with the ads in the library. We found that over 1.8 million ads targeted users in Germany over the last two months; on average, each ad campaign had a duration of just 2 days, calculated as the difference between the first and last display date. During that time, the typical ad garnered around 1000 impressions, as indicated by the median value. This means that more then half of the ads received fewer than 1000 impressions or fewer, see figure below.
 
-{% include plotly.html data="/assets/plotly/2024-02_ad_impressions.js" id="82c56e4d-af1d-48dd-ba67-9c0629b54050" caption="The plot shows the number of <b>published</b> (upper chart) <b>removed</b> (lower chart) ads listed by the number of impressions in Germany confirming the outlier position of the Disney+ ad, which falls in the highest category of 10-20 million impressions." %} 
+{% include plotly.html data="/assets/plotly/2024-02_ad_impressions.js" id="f3eb34b3-2692-41cf-ae05-cc856ec5a81b" caption="The plot shows the number of <b>published</b> (upper chart) <b>removed</b> (lower chart) ads listed by the number of impressions in Germany confirming the outlier position of the Disney+ ad, which falls in the highest category of 10-20 million impressions." %} 
 
 ## Removing ads is slow and usually happens after ads have reached their audience
 
