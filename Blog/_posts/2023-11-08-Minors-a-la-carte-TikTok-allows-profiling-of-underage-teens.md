@@ -5,7 +5,7 @@ date: 2023-11-07 10:00:00
 description: We look into the Research API and its shortcomings.
 tags: ads, analysis
 categories: ad-library
-featured: true
+featured: false
 related_posts: true
 ---
 *By: [Santiago Sordo Ruz](https://www.stiftung-nv.de/en/person/santiago-sordo-ruz), [Anna Semenova](https://www.stiftung-nv.de/de/person/anna-semenova) and [Martin Degeling](https://www.stiftung-nv.de/en/person/dr-martin-degeling).
