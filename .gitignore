@@ -1,4 +1,6 @@
-Blog/_site/404.html
-Blog/_site
+Blog/_site/
 .vscode
 Blog/.jekyll-cache
+node_modules
+Gemfile
+Gemfile.lock
