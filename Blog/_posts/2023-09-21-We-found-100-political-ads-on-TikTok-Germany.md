@@ -5,7 +5,7 @@ date: 2023-09-25 10:00:00
 description: An update on political ads in Germany + Dataset
 tags: ads, analysis, political-ads
 categories: ad-library
-featured: true
+featured: false
 related_posts: true
 ---
 *By: [Anna Semenova](https://www.stiftung-nv.de/de/person/anna-semenova) and [Alexander Hohlfeld](https://www.stiftung-nv.de/de/person/alexander-hohlfeld)*
