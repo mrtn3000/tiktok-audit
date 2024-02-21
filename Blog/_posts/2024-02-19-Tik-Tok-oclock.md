@@ -10,6 +10,8 @@ related_posts: true
 author: Alexander Hohlfeld, Anna Semenova, Martin Degeling, Greta Hess, Kathy Meßmer
 ---
 
+{% include figure.html path="/assets/img/2024-02_dsa-oclock-header.webp" class="img-fluid rounded z-depth-1" %} 
+
 <div class="alert alert-secondary" role="alert">
   <h4>💡 Summary</h4>
  <ul>
@@ -20,9 +22,6 @@ author: Alexander Hohlfeld, Anna Semenova, Martin Degeling, Greta Hess, Kathy Me
 <li><b>Commercial Communication Challenges:</b> TikTok's "other commercial content" section lacks essential details, making it almost useless for researchers. Users' limited use, sometimes misuse, of disclosure functionalities and missing product information produce mainly data waste.</li>
 </ul>
 </div>
-
-
-{% include figure.html path="/assets/img/2024-02_dsa-oclock-header.webp" class="img-fluid rounded z-depth-1" %} 
 
 
 *By [Alexander Hohlfeld](https://www.stiftung-nv.de/en/person/alexander-hohlfeld), [Anna Semenova](https://www.stiftung-nv.de/de/person/anna-semenova), [Martin Degeling](https://www.stiftung-nv.de/en/person/dr-martin-degeling), [Greta Hess](https://www.stiftung-nv.de/de/person/greta-hess) and [Kathy Meßmer](https://www.stiftung-nv.de/en/person/dr-anna-katharina-messmer).*
