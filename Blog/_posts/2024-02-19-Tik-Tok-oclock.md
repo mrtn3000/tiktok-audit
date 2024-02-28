@@ -2,7 +2,7 @@
 layout: post
 title: "⏰ Tik-Tok, DSA O'Clock?"
 date: 2024-02-21 10:00:00
-description: "Unveiling TikTok's Ad Library Capabilities and Constraints."
+description: ""
 tags: ads, analysis
 categories: ad-library
 featured: true
@@ -18,7 +18,7 @@ author: Alexander Hohlfeld, Anna Semenova, Martin Degeling, Greta Hess, Kathy Me
  <li><b>Background:</b> On Feb 19, EU Commission opened proceedings against TikTok, investigating potential breaches of Digital Services Act (DSA) related to ad repositories. We can confirm that there are several issues.</li>
 <li><b>Ad Library Features:</b> TikTok's ad library, although compliant from afar, has some problems, including delays with showing data, lack of details for some ad types, and limited search parameters, which are hindering effective researcher use.</li>
 <li><b>Incompleteness & Reliability Issues:</b> The ad library lacks vital details on ad content, e.g., product information and subject matter, impeding comprehensive analysis. The platform struggles to keep pace with evolving features, impacting the library's reliability.</li>
-<li><b>Deleted Ads & API Limitations:</b> SSlow removal of ads and API issues (e.g., missing context information) pose challenges. 206 ads were removed based on DSA reports, only 9.9% of removals were identified through automated means, a stark difference compared to the highly automated content moderation approach of TikTok.</li>
+<li><b>Deleted Ads & API Limitations:</b> Slow removal of ads and API issues (e.g., missing context information) pose challenges. 206 ads were removed based on DSA reports, only 9.9% of removals were identified through automated means, a stark difference compared to the highly automated content moderation approach of TikTok.</li>
 <li><b>Commercial Communication Challenges:</b> TikTok's "other commercial content" section lacks essential details, making it almost useless for researchers. Users' limited use, sometimes misuse, of disclosure functionalities and missing product information produce mainly data waste.</li>
 </ul>
 </div>
@@ -28,9 +28,9 @@ author: Alexander Hohlfeld, Anna Semenova, Martin Degeling, Greta Hess, Kathy Me
 
 On the 19th of February the European Commission opened [formal proceedings against TikTok](https://ec.europa.eu/commission/presscorner/detail/en/IP_24_926) to assess whether the platform breached the Digital Services Act (DSA) in several areas, including “[t]he compliance with DSA obligations to provide a searchable and reliable repository for advertisements presented on TikTok”. 
 
-The background: According to the Digital Services Act, “Very large online platforms or very large online search engines should ensure public access to repositories of advertisements presented on their online interfaces to facilitate supervision and research into emerging risks brought about by the distribution of advertising online” ([Recital 95](https://eur-lex.europa.eu/eli/reg/2022/2065/oj)). 
+The background: According to the Digital Services Act, “Very large online platforms or very large online search engines should ensure public access to repositories of advertisements presented on their online interfaces to facilitate supervision and research into emerging risks brought about by the distribution of advertising online” ([Recital 95](https://eur-lex.europa.eu/eli/reg/2022/2065/oj), which provides details on the mandatory ad archives for VLOPs from [Article 39](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2065#d1e4076-1-1)). 
 
-As civil society researchers using [TikTok’s ad library](https://library.tiktok.com/ads) to assess risks - see our post from [last week](https://www.notion.so/2024-02-12-Ads-Ads-Ads-30ae3bcf55d44a33a91d67f5ad7ed1e8?pvs=21) - we have also checked compliance of said library with the requirements for advertising repositories set out in Article 39 of the DSA. In the following, we want to provide a short overview of what TikTok’s ad library does and does not offer.
+As civil society researchers using [TikTok’s ad library](https://library.tiktok.com/ads) to assess risks - see our post from [last week](https://www.notion.so/2024-02-12-Ads-Ads-Ads-30ae3bcf55d44a33a91d67f5ad7ed1e8?pvs=21) - we have also checked compliance of said library with the requirements for advertising repositories set out in [Article 39 of the DSA](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2065#d1e4076-1-1). In the following, we want to provide a short overview of what TikTok’s ad library does and does not offer.
 
 ## Different types of advertisements
 
