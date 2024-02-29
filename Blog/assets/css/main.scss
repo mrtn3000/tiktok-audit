@@ -16,3 +16,24 @@ $max-content-width: {{ site.max_width }};
 ;
 
 blockquote { font-size: 1rem;}
+
+.rsba-scenario-affected{
+  font-weight: 400;
+  color:#ff8c14;
+}
+.rsba-scenario-characteristics{
+  font-weight: 400;
+  color: #bf2aff;
+}
+.rsba-scenario-harm{
+  font-weight: 400;
+  color: #f02878;
+}
+.rsba-scenario-platform{
+  font-weight: 400;
+  color: #6d7682;
+}
+.rsba-scenario-macro{
+  font-weight: 400;
+  color: #26c34e;
+}

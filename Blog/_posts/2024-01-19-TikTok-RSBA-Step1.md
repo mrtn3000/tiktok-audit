@@ -5,7 +5,7 @@ date: 2024-01-19 07:00:00
 description: A first introduction into our methodology
 tags: methodology, process, step1
 categories: rsba
-featured: true
+featured: false
 related_posts: true
 ---
 
