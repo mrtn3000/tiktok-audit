@@ -4,7 +4,7 @@
 
   {% if extension == "mp4" or extension == "webm" or extension == "ogg" %}
 
-  <video muted controls autoplay preload="auto"  >
+  <video muted controls autoplay preload="auto" style="max-width:100%">
     <source src="{% if include.cache_bust %}{{ include.path | relative_url | bust_file_cache }}{% else %}{{ include.path | relative_url }}{% endif %}"
     {% if include.class %}class="{{ include.class }}"{% endif %}
     {% if include.width %}width="{{ include.width }}"{% else %}width="auto"{% endif %}

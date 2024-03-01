@@ -5,7 +5,7 @@ date: 2024-01-10 12:00:00
 description: A short analysis of political ads and TikToks new advertisement library
 tags: analysis, temu, fyp, tiktokmademebuyit
 categories: rsba
-featured: true
+featured: false
 related_posts: true
 ---
 

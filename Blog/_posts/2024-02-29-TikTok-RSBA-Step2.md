@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "🧵 Auditing TikTok: Defining Scenarios for TikTok Audits"
-date: 2024-02-29 04:00:00
+date: 2024-02-29 09:00:00
 description: "Insights from RSBA Step 2"
-tags: methodology, process, step1
+tags: methodology, process, step2
 categories: rsba
 featured: true
 related_posts: true

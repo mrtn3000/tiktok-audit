@@ -2,7 +2,7 @@
 layout: post
 title: "⏰ Tik-Tok, DSA O'Clock?"
 date: 2024-02-21 10:00:00
-description: ""
+description: "Unveiling TikTok's Ad Library Capabilities and Constraints"
 tags: ads, analysis
 categories: ad-library
 featured: true
