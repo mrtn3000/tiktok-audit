@@ -31,7 +31,7 @@ Over time, as we learned about the benefits and drawbacks of each approach, expl
 
 As described in this [previous post](https://tiktok-audit.com/blog/2024/TikTok-RSBA-Step2/), our scenarios focus on systemic risks related to consumer protection, health, and public discourse. For each scenario, we discussed and prioritized different methods to better assess the severity of the risk.
 
-{% include figure.html path="/assets/img/2024-03_rsba_measurement_priorization.svg" caption="TSchema for prioritizing measurements" alt="Schema for prioritizing measurements focusing Difficulty and Detectabilty" class="img-fluid rounded" zoomable=true width="100%" %} 
+{% include figure.html path="/assets/img/2024-03_rsba_measurement_priorization.svg" caption="Schema for prioritizing measurements" alt="Schema for prioritizing measurements focusing Difficulty and Detectabilty" class="img-fluid rounded" zoomable=true width="100%" %} 
 
 Two out of three scenarios target the recommender system of TikTok's For You feed and, therefore, require the perspectives of actual users and an understanding of the app's behavior when running, which can not be conducted on the document-, architecture- or code-level. Semi-automated here means that the data collection started with a manual training phase where researchers of our group manually trained accounts, impersonating different personas and sharing the data afterward, similar to a crowd-sourced approach. The automated data collection phase then follows this.
 
@@ -114,7 +114,7 @@ Once the researcher considered an account “trained”, which we defined as “
 
 <div class="row justify-content-sm-center"><div class="col-sm-12 mt-12 mt-md-12">
 {% include video.html path="/assets/video/2024-03_TikTok-Automated.webm" %} 
-<div class="caption">Video shows 4 ohones automatically swiping through TikTok</div>
+<div class="caption">Video shows 4 phones automatically swiping through TikTok</div>
 </div></div>
 
 For the automated data collection, the phones were set up to intercept the traffic between the TikTok app and servers and store relevant information like video and account metadata in a database.
@@ -131,7 +131,7 @@ The following graphic gives a high-level overview of the process.
 
 {% include figure.html path="/assets/img/2024-03_data_collection_flow.svg" caption="Types of audits we have identified as potentially relevant for the RSBA" alt="List of audit types: Code audit, Crowd-sourced audit, Document audit, Architecture audit, Automated audit, User survey" class="img-fluid rounded" zoomable=true width="100%" %} 
 
-As of today, we have collected metadata on roughly half a million videos from the app, 2 million comments, 20 Million ads from the ad library, information on 1000,000 creators, and followed the links in 4,000 ads.
+As of today, we have collected metadata on roughly half a million videos from the app, 2 million comments, 20 Million ads from the ad library, information on 100,000 creators, and followed the links in 4,000 ads.
 
 We hope that combining the data from the user survey and semi-automated means can help us conduct an informed risk assessment of TikTok.
 
