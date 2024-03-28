@@ -5,7 +5,7 @@ date: 2024-02-09 08:00:00
 description: (and other big platforms)
 tags: analysis
 categories: DSA
-featured: true
+featured: false
 related_posts: true
 author: Julian Jaursch
 ---

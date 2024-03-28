@@ -1,6 +1,8 @@
 <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
 <script src="{{ '/assets/js/plotly.js' | relative_url }}" type="text/javascript"></script>
-<center><div id="{{ include.id }}" class="plotly-graph-div" style="width:100%"></div></center>
+<center><div id="{{ include.id }}" class="plotly-graph-div" 
+    {% if include.width %}style="width:{{ include.width }}"{% else %}style="width:auto"{% endif %}
+    ></div></center>
 <script src="{{ include.data | relative_url }}" ></script>
 
 {%- if include.caption -%}<figcaption class="caption">{{ include.caption }}</figcaption>{%- endif %}
