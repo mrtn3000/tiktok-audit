@@ -7,6 +7,7 @@ tags: ads, analysis
 categories: ad-library
 featured: true
 related_posts: true
+include_plotly: true
 author: Alexander Hohlfeld, Anna Semenova, Martin Degeling, Greta Hess, Kathy Meßmer
 ---
 

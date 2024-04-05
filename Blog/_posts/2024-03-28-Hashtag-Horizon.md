@@ -7,6 +7,7 @@ tags: hashtags, analysis
 categories: research
 featured: true
 related_posts: true
+include_plotly: true
 author: Greta Hess, Alexander Hohlfeld, Martin Degeling
 ---
 
