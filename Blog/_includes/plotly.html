@@ -2,6 +2,10 @@
 <center><div id="{{ include.id }}" class="plotly-graph-div" 
     {% if include.width %}style="width:{{ include.width }}"{% else %}style="width:auto"{% endif %}
     ></div></center>
-<script src="{{ include.data | relative_url }}" ></script>
+
 
 {%- if include.caption -%}<figcaption class="caption">{{ include.caption }}</figcaption>{%- endif %}
+
+
+{% capture plotly_data %}{{ include.data }}{% endcapture %}
+{% assign plot_data = plot_data | append: "|" | append: plotly_data %}

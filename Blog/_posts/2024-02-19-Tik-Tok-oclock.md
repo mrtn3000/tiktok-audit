@@ -7,7 +7,6 @@ tags: ads, analysis
 categories: ad-library
 featured: true
 related_posts: true
-include_plotly: true
 author: Alexander Hohlfeld, Anna Semenova, Martin Degeling, Greta Hess, Kathy Meßmer
 ---
 
@@ -194,3 +193,17 @@ The library for “other commercial content” offers very little information. O
 # Quo Vadis TikTok Ad Library?
 
 **Our analysis shows that there is still a long way to go for TikTok’s ad library to become a reliable tool for users and researchers.** While the ad library complies with some basic legal requirements, it does not provide necessary information about the content of ads. Moreover, the interface and nontransparent search functionality make it hard to use. The API offers even less information, and neither of the officially provided methods of accessing TikTok allows for aggregated analysis. The “Other commercial content” category on “commercial communication” can be considered almost useless due to a lack of information provided. The simultaneity of a massive misuse of the feature and a lack of serious use creates a huge amount of data waste which is impossible to study systematically. While elsewhere TikTok prides itself on its highly automated approach to content moderation, it does not seem to check these self-attached labels at all and does not even require an indication of the brand being advertised. Whether or not a video there contains or not contains commercial communication is in most cases impossible to tell. **Overall, the TikTok ad library currently feels a lot more like the Wild West than a reliable tool that gives researchers systematic insight into the platform's advertising ecosystem.**
+
+<script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+<script src="{{ '/assets/js/plotly.js' | relative_url }}" type="text/javascript"></script>
+<script type="text/javascript">
+var plotDataArray = "{{ plot_data }}".split("|");
+// create script tag for each element in plotDataArray with the data as src
+for (var i = 0; i < plotDataArray.length; i++) {
+  var script = document.createElement('script');
+  script.src = plotDataArray[i];
+  script.type = 'text/javascript';
+  script.async = true;
+  document.head.appendChild(script);
+}
+</script>

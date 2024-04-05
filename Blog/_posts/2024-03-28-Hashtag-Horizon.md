@@ -7,7 +7,6 @@ tags: hashtags, analysis
 categories: research
 featured: true
 related_posts: true
-include_plotly: true
 author: Greta Hess, Alexander Hohlfeld, Martin Degeling
 ---
 
@@ -126,3 +125,18 @@ We think the platform should provide more information to users as well as resear
 - Control mechanisms for users should be expanded beyond text-based filters.
 
 In conclusion, we can say that hashtags and content descriptions are important, but less prevelant than one might think. With this post, we want to highlight that those relying on hashtags to draw conclusions about the prevalence of certain content might miss a significant part of the ecosystem in their analysis.
+
+
+<script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+<script src="{{ '/assets/js/plotly.js' | relative_url }}" type="text/javascript"></script>
+<script type="text/javascript">
+var plotDataArray = "{{ plot_data }}".split("|");
+// create script tag for each element in plotDataArray with the data as src
+for (var i = 0; i < plotDataArray.length; i++) {
+  var script = document.createElement('script');
+  script.src = plotDataArray[i];
+  script.type = 'text/javascript';
+  script.async = true;
+  document.head.appendChild(script);
+}
+</script>
