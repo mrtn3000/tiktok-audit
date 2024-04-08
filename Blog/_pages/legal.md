@@ -65,9 +65,9 @@ You can reach our data protection officer via [datenschutz@stiftung-nv.de](mailt
 
 #### 3.1 Access data/ Server log files
  
-We do not store any logs for this server nor do we use third party services within the website.
+We store server logs for maintainance purposes for 7 days (Art 6 para 1 lit f) this includes data about the requested file, time, information about the user agent (browser) in combination with your IP address and - if enabled - the site that led you to our website (the referer). To better understand the usage of our website ((Art 6 para 1 lit f)) this data is aggregated locally to generate usage statistics with [goatcounter](https://www.goatcounter.com/).
 
-Our [hoster](https://www.digitalocean.com/) may collect log information on the networking level in accordance with their [privacy policy](https://www.digitalocean.com/legal/privacy-policy) and the [data processing agreement](https://www.digitalocean.com/legal/data-processing-agreement)
+Our [hoster](https://www.digitalocean.com/) collectw log information on the networking level in accordance with their [privacy policy](https://www.digitalocean.com/legal/privacy-policy) and the [data processing agreement](https://www.digitalocean.com/legal/data-processing-agreement)
 
 ####  3.2  Get in contact 
 
