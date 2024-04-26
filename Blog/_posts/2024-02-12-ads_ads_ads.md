@@ -5,7 +5,7 @@ date: 2024-02-12 10:00:00
 description: How the for you feed is clogged with ads.
 tags: ads, marketing, fyp
 categories: ad-library
-featured: true
+featured: false
 related_posts: true
 author: Anna Semenova, Martin Degeling and Kathy Meßmer
 ---
