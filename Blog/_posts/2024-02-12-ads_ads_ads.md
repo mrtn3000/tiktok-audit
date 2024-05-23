@@ -71,6 +71,7 @@ This analysis has some significant limitations as it is based on hashtags, which
 
 ## Most paid promotion ads target small audiences
 
+
 {% include plotly.html data="/assets/plotly/2024-02_ad_cummulative.js" id="ceba7163-8f49-4dcc-9e4f-c44ef053c008" caption="The chart illustrates the cumulative distribution of advertisements based on the share of users they are exposed to. The x-axis, 'Share of Users,' indicates the proportion of users to whom an ad is shown, while the y-axis, 'Cumulative Frequency (%),' represents the cumulative percentage of ads falling within or below each share-of-users category." %} 
 
 The chart above shows that a significant portion of videos, accounting for over 60% of all ads, is exclusively shown to a single user within our group of test accounts. Approximately 80% of ads are presented to a maximum of two users, implying that **only around 20% of ads extend their reach to more than two users in our test group**. The distribution shows that the Disney+ ad mentioned above is an outlier. This is likely an effect of limited ad spending on the majority of campaigns that limit their reach to a small audience. This leads to a high number of ads, but a limited number of ad campaigns reaching a large audience on TikTok.
@@ -106,3 +107,18 @@ As noted above, our methodology has some limitations:
 - There was an issue with our data collection over the Christmas holidays, making it impossible to assign videos watched to the persona between the end of manual training and December 27th. This affected 22 accounts. We, therefore, limited the analysis relying on the persona to data collected after December 27th.
 - As mentioned above, finding ads in the “grey area” where the creator is seeking financial gain from reviewing or showcasing a product is difficult. We, therefore, chose very specific criteria (using the hashtag #ad or #anzeige or mentioning the brand) to get a lower bound for this type of consumer-to-consumer marketing. Future research should try to narrow down features to identify this type of marketing, similar to TikTok trying to leverage this by [automatically identifying products and advertising their own shop](https://gizmodo.com/tiktok-testing-users-will-put-up-every-video-being-ad-1851207082).
 - We also noted that the ad library is rather volatile and changes are made after ads have been published. We continuously scraped the library from November 2023 on for new ads published at least 48 hours ago, but also going back to September 2023. We only checked again for ads we encountered with our automated accounts to fill gaps in our dataset; we do not have a complete mirror of it.
+
+
+<script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+<script src="{{ '/assets/js/plotly.js' | relative_url }}" type="text/javascript"></script>
+<script type="text/javascript">
+var plotDataArray = "{{ plot_data }}".split("|");
+// create script tag for each element in plotDataArray with the data as src
+for (var i = 0; i < plotDataArray.length; i++) {
+  var script = document.createElement('script');
+  script.src = plotDataArray[i];
+  script.type = 'text/javascript';
+  script.async = true;
+  document.head.appendChild(script);
+}
+</script>
