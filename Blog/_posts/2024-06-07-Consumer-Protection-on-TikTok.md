@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "🔍 TikTok's Impact on Consumer Rights: A Closer Look!"
-date: 2024-06-07 13:00:03
+date: 2024-06-07 11:00:03
 description: "TikTok and Fast Fashion Fusion"
 tags: analysis, step4
 categories: research, rsba
