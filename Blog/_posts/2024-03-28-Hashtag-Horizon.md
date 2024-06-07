@@ -5,7 +5,7 @@ date: 2024-03-28 08:00:00
 description: "An analysis of the prevalence of hashtags on TikTok"
 tags: hashtags, analysis
 categories: research
-featured: true
+featured: false
 related_posts: true
 author: Greta Hess, Alexander Hohlfeld, Martin Degeling
 ---

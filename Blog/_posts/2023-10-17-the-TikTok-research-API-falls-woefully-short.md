@@ -5,7 +5,7 @@ date: 2023-10-16 10:00:00
 description: We look into the Research API and its shortcomings.
 tags: analysis
 categories: research API
-featured: true
+featured: false
 related_posts: true
 ---
 *By: [Santiago Sordo Ruz](https://www.stiftung-nv.de/en/person/santiago-sordo-ruz), [Martin Degeling](https://www.stiftung-nv.de/en/person/dr-martin-degeling) and [Kathy Meßmer](https://www.stiftung-nv.de/en/person/dr-anna-katharina-messmer)

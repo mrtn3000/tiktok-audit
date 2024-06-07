@@ -5,7 +5,7 @@ date: 2024-02-21 10:00:00
 description: "Unveiling TikTok's Ad Library Capabilities and Constraints"
 tags: ads, analysis
 categories: ad-library
-featured: true
+featured: false
 related_posts: true
 author: Alexander Hohlfeld, Anna Semenova, Martin Degeling, Greta Hess, Kathy Meßmer
 ---
