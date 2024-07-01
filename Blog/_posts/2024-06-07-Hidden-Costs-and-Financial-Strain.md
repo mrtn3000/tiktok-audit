@@ -3,7 +3,7 @@ layout: post
 title: "💸 Exploring TikTok's Individual Harms for Young Adults"
 date: 2024-06-07 11:00:01
 description: "Hidden Costs and Financial Strain"
-tags: analysis, step4
+tags: analysis, step4, consumer protection
 categories: research, rsba
 featured: true
 related_posts: true

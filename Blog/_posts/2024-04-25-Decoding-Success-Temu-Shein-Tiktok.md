@@ -5,7 +5,7 @@ date: 2024-04-26 06:00:00
 description: "TikTok and Fast Fashion Fusion"
 tags: temu, shein, analysis
 categories: research
-featured: true
+featured: false
 related_posts: true
 author: Anna Semenova
 ---
