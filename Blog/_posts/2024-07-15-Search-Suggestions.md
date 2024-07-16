@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "🗳️ Other search for … the opposition party"
-date: 2024-07-16 12:00:00
+date: 2024-07-16 10:00:00
 description: "TikToks Search Suggestion in Germany before the EU elections"
 tags: analysis, step4, survey, search suggestions, public discourse
 categories: research, rsba
