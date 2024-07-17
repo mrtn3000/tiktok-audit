@@ -5,7 +5,7 @@ date: 2024-06-28 00:00:00
 description: "The macro harm of TikTok"
 tags: analysis, step4, survey, consumer protection
 categories: research, rsba
-featured: true
+featured: false
 related_posts: true
 author: Martin Degeling, Kathy Meßmer, Anna Semenova, Greta Hess, Alexander Hohlfeld
 ---
