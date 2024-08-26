@@ -5,7 +5,7 @@ date: 2024-06-07 11:00:01
 description: "Hidden Costs and Financial Strain"
 tags: analysis, step4, consumer protection
 categories: research, rsba
-featured: true
+featured: false
 related_posts: true
 author: Kathy Meßmer, Martin Degeling, Anna Semenova, Greta Hess, Alexander Hohlfeld
 ---
