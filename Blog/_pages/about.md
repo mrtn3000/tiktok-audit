@@ -17,7 +17,9 @@ nav_order: 1
 ---
 ### about us
 
-We are independent researchers ([Kathy](https://www.stiftung-nv.de/persons/dr-anna-katharina-messmer), [Martin](https://www.stiftung-nv.de/persons/dr-martin-degeling), [Anna](https://www.stiftung-nv.de/persons/anna-semenova), [Alex](https://www.stiftung-nv.de/en/person/alexander-hohlfeld)) and [Greta](https://www.interface-eu.org/persons/greta-hess), at [interface](https://www.interface-eu.org) (previously "Stiftung Neue Verantwortung), a non-profit think tank on information technology and public policy. Learn more about us [here](https://www.interface-eu.org/focus-area/tiktok-audit).
+This blog is a result of a research project on TikTok's by ([Kathy](https://www.kathymessmer.de/), [Martin](https://martin.degeling.com), [Anna](https://www.stiftung-nv.de/persons/anna-semenova), [Alex](https://www.stiftung-nv.de/en/person/alexander-hohlfeld)) and [Greta](https://www.interface-eu.org/persons/greta-hess), at [interface](https://www.interface-eu.org) (previously "Stiftung Neue Verantwortung), a non-profit think tank on information technology and public policy. Learn more about the project[here](https://www.interface-eu.org/focus-area/tiktok-audit).
+
+The project ended in September 2024, since then the blog is maintained by Martin now at [AI Forensics](https://aiforensics.org/).
 
 ### about the project
 
