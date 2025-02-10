@@ -13,9 +13,6 @@ author: Anna Semenova, Martin Degeling, Greta Hess
 *By [Anna Semenova](https://www.stiftung-nv.de/de/person/anna-semenova), [Martin Degeling](https://www.stiftung-nv.de/en/person/dr-martin-degeling), [Greta Hess](https://www.stiftung-nv.de/de/person/greta-hess).*
 
 
-{% include figure.html path="/assets/img/2024-08_interest_overview.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-
-
 TikTok’s impact on the mental and physical well-being of its users, especially young adults, has raised significant concerns. While the platform has been criticized for influencing public discourse, consumer protection, and the spread of misinformation, there is also concern about how TikTok’s content may affect users' (mental) health and self-perception. TikTok’s algorithm-driven features, such as the For You feed and search function, are designed to maximize engagement but can sometimes surface content with unintended consequences for its audience.
 
 Our research findinga from both the survey and scraped data highlight several concerns about the presentation of health-related content on TikTok. Our survey results indicate that TikTok use is correlated with a heightened desire to change one’s appearance, especially among women. On average, 58% of respondents reported social media influencing their desire to alter their appearance, with a gender gap showing 68% of women and 49% of men agreeing. TikTok users were more likely to report body discomfort and a desire for change than non-users. Content like #WhatIEatInADay and frequent ads for diet products or cosmetic services further try to monetize and reinforce this desire, despite many finding such content unrealistic.
