@@ -2,7 +2,7 @@
 layout: post
 title: "💊 TikToks Effect on Health"
 date: 2024-08-26 10:00:00
-description: ""
+description: "Resutls from our survey with young adults in Germany + Medfluencers"
 tags: analysis, step4, FYP,
 categories: research, rsba
 featured: true
